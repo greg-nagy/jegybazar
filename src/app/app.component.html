@@ -1,20 +1,77 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{title}}!
-  </h1>
-  <img width="300" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+    <a class="navbar-brand" href="#">Jegybazár</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav ml-auto">
+        <a class="nav-item nav-link active" href="index.html">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-item nav-link" href="esemenyek.html">Események</a>
+        <a class="nav-item nav-link" href="jegyek.html">Jegyek</a>
+        <a class="nav-item nav-link" href="rolunk.html">Rólunk</a>
+        <a class="nav-item nav-link" href="belepes.html">Belépés</a>
+      </div>
+    </div>
+  </div>
+</nav>
 
+<div class="jumbotron">
+  <div class="container text-center">
+    <h1 class="display-4">Jegyek bárkitől, bárhol, bármikor!</h1>
+    <p class="lead">Használd a Jegybazárt és csereberélj jegyeket a legjobb bulikra. Elfogyott? Az orrod elől vitték el az utolsót? Ne aggódj, irány a JegyBazár!</p>
+    <p class="lead">
+      <a class="btn btn-primary btn-lg" href="#" role="button">Nézzük az eseményeket!</a>
+    </p>
+  </div>
+</div>
+
+
+<div class="container">
+
+  <div class="card-deck pt-5">
+
+    <div class="col col-lg-4">
+      <div class="card text-center">
+        <div class="row justify-content-center">
+          <img class="card-img-top img-fluid calendar" src="assets/calendar.png" alt="Card image cap"></div>
+        <div class="card-body">
+          <h4 class="card-title text-center">Események</h4>
+          <p class="card-text">tt találod a legtöbb jó bulit, böngéssz bátran és keress vagy adj el jegyeket a barátaidnak, vagy más felhasználóknak.</p>
+          <a href="#" class="btn btn-primary btn_card">Események</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col col-lg-4">
+      <div class="card text-center">
+        <div class="row justify-content-center">
+          <img class="card-img-top img-fluid calendar" src="assets/ticket.png" alt="Card image cap"></div>
+        <div class="card-body">
+          <h4 class="card-title text-center">Jegyek</h4>
+          <p class="card-text">Ha sietsz, egyből kezdheted a jegyek böngészésével is. Itt is tudsz keresni az esemény neve vagy időpontja alapján.</p>
+          <a href="#" class="btn btn-primary btn_card">Jegyek</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col col-lg-4">
+      <div class="card text-center col">
+        <div class="row justify-content-center">
+          <img class="card-img-top img-fluid calendar" src="assets/user.png" alt="Card image cap"></div>
+        <div class="card-body">
+          <h4 class="card-title">Regisztráció</h4>
+          <p class="card-text">Még nem regisztráltál? Akkor gyorsan tedd meg, mert a szolgáltatás csak tagonkak elérhető. Sőt, az újak értékes ajándékot kapnak tőlünk.</p>
+          <a href="#" class="btn btn-primary btn_card">Regisztráció</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<footer class="bg-light text-center py-3 sticky-bottom">
+  <div class="container">
+    <p class="m-0">&copy; Company 2017</p>
+  </div>
+</footer>
