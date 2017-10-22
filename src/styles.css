@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
-body {
-  min-height: 100vh;
+.content-container {
+  min-height: calc(100vh - 60px);
   display: flex;
   flex-direction: column;
 }
