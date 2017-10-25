@@ -1,3 +1,54 @@
-<p>
-  bid works!
-</p>
+<div class="container py-3">
+
+  <div class="row justify-content-center">
+
+    <div class="card mb-4 col-11 col-sm-8 mx-auto p-0">
+
+      <div class="card-header">
+        <div class="text-center">
+          <h3>Licit adatok</h3>
+        </div>
+      </div>
+
+      <div class="card-body">
+        <table class="table table-responsive">
+          <tbody>
+          <tr>
+            <th scope="row">Minimum licit_</th>
+            <td>1009 Ft</td>
+          </tr>
+          <tr>
+            <th scope="row">Jelenlegi licit:</th>
+            <td>3211 Ft</td>
+          </tr>
+          <tr>
+            <th scope="row">Licitek száma:</th>
+            <td>33 db</td>
+          </tr>
+          <tr>
+            <th scope="row">Licit lépcső:</th>
+            <td>304 Ft</td>
+          </tr>
+
+          <tr>
+            <form class="form-inline my-2 my-lg-0">
+              <th><input class="form-control mr-sm-2" type="search"
+                         placeholder="Esemény neve"></th>
+              <td>
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+                  Keresés
+                </button>
+              </td>
+            </form>
+          </tr>
+          </tbody>
+        </table>
+
+        <div class="">
+          <a routerLink="../../list" class="btn btn-primary text-light ml-lg-2">Licit a lépcső
+            szerint</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -5,7 +5,8 @@
 
       <!-- Alert message. -->
       <div class="alert alert-primary alert-dismissible fade show" role="alert">
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <button type="button" class="close" data-dismiss="alert"
+                aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
         Regelj be és már veheted is a jegyeket.
@@ -17,19 +18,20 @@
           <form id="registerForm" novalidate>
             <div class="form-group">
               <label for="registerName">Név</label>
-              <input required name="registerName" class="form-control" id="registerName"
-                     placeholder="név">
+              <input required name="registerName" class="form-control"
+                     id="registerName" placeholder="név">
             </div>
             <div class="form-group">
               <label for="registerEmail">Email</label>
-              <input required name="registerEmail" type="email" class="form-control"
-                     id="registerEmail" placeholder="email">
+              <input required name="registerEmail" type="email"
+                     class="form-control" id="registerEmail"
+                     placeholder="email">
             </div>
 
             <div class="form-group">
               <label for="birthDate">Születési idő</label>
-              <input name="registerBirthDate" type="date" class="form-control"
-                     id="birthDate"
+              <input name="registerBirthDate" type="date"
+                     class="form-control" id="birthDate"
                      value="1999-09-10" max="2000-01-01" required>
             </div>
 
@@ -50,7 +52,9 @@
 
             <div class="form-group">
               <select name="location" class="custom-select">
-                <option value="notset" selected>Milyen településen laksz?</option>
+                <option value="notset" selected>Milyen településen
+                  laksz?
+                </option>
                 <option value="1">Főváros</option>
                 <option value="2">Megyeszékhely</option>
                 <option value="3">Kistelepülés</option>
@@ -59,18 +63,22 @@
 
             <form>
               <div class="form-group">
-                <label for="exampleFormControlFile1">Válassz avatárt</label>
-                <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                <label for="exampleFormControlFile1">Válassz
+                  avatárt</label>
+                <input type="file" class="form-control-file"
+                       id="exampleFormControlFile1">
               </div>
             </form>
 
             <div class="form-group">
               <label for="registerPassword">Jelszó</label>
               <input
-                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,20}" required
+                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,20}"
+                required
                 title="kis, nagybetű és szám, legalább nyolc karakter hosszan"
-                name="registerPassword" type="password" class="form-control"
-                id="registerPassword" placeholder="jelszó">
+                name="registerPassword" type="password"
+                class="form-control" id="registerPassword"
+                placeholder="jelszó">
             </div>
             <div class="form-group">
               <label for="registerPassword2">Jelszó ismét</label>
@@ -78,8 +86,11 @@
                      class="form-control" id="registerPassword2"
                      placeholder="jelszó ismét">
             </div>
-            <button type="submit" class="btn btn-primary"
-            routerLink="/user">regisztráció</button>
+            <button type="submit"
+                    class="btn btn-primary"
+                    routerLink="/user"
+            >regisztráció
+            </button>
           </form>
         </div>
       </div>
@@ -87,6 +98,4 @@
 
     </div>
   </div>
-  <!-- /Login form. -->
-
-</div> <!-- /container -->
+</div>

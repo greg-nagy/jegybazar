@@ -6,6 +6,7 @@ import { EventDetailComponent } from './event/event-detail/event-detail.componen
 import { EventListComponent } from './event/event-list/event-list.component';
 import { EventComponent } from './event/event.component';
 import { HomeComponent } from './home/home.component';
+import { BidComponent } from './ticket/bid/bid.component';
 import { TicketDetailComponent } from './ticket/ticket-detail/ticket-detail.component';
 import { TicketListComponent } from './ticket/ticket-list/ticket-list.component';
 import { TicketComponent } from './ticket/ticket.component';
@@ -32,7 +33,7 @@ const routes: Routes = [
     children: [
       {path: 'list', component: TicketListComponent},
       {path: 'new', component: TicketDetailComponent},
-      {path: ':id/bid', component: TicketDetailComponent},
+      {path: ':id/bid', component: BidComponent},
     ]
   },
   {path: 'about', component: AboutComponent},
@@ -62,6 +63,7 @@ export class AppRoutingModule {
     TicketComponent,
     TicketListComponent,
     TicketDetailComponent,
+    BidComponent,
     AboutComponent,
     LoginComponent,
     RegistrationComponent,
@@ -69,5 +71,5 @@ export class AppRoutingModule {
     ProfileEditComponent,
     PageNotFoundComponent
   ];
-
 }
+
