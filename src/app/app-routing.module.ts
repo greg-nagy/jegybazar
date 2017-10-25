@@ -36,13 +36,13 @@ const routes: Routes = [
     ]
   },
   {path: 'about', component: AboutComponent},
-  {path: 'login', component: LoginComponent},
-  {path: 'registration', component: RegistrationComponent},
   {
     path: 'user',
     children: [
       {path: '', component: ProfileComponent},
       {path: 'edit', component: ProfileEditComponent},
+      {path: 'login', component: LoginComponent},
+      {path: 'registration', component: RegistrationComponent}
     ]
   },
   {path: '', redirectTo: '/home', pathMatch: 'full'},
