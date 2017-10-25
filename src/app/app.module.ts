@@ -4,10 +4,10 @@ import { CollapseModule } from 'ngx-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { EventcardComponent } from './eventcard/eventcard.component';
-import { FooterComponent } from './footer/footer.component';
-import { JumbotronComponent } from './jumbotron/jumbotron.component';
-import { NavbarComponent } from './navbar/navbar.component';
+import { EventcardComponent } from './event/eventcard/eventcard.component';
+import { FooterComponent } from './core/footer/footer.component';
+import { JumbotronComponent } from './core/jumbotron/jumbotron.component';
+import { NavbarComponent } from './core/navbar/navbar.component';
 
 @NgModule({
   declarations: [

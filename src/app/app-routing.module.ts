@@ -1,18 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './about/about.component';
-import { EventDetailComponent } from './event-detail/event-detail.component';
-import { EventListComponent } from './event-list/event-list.component';
+import { PageNotFoundComponent } from './core/page-not-found/page-not-found.component';
+import { EventDetailComponent } from './event/event-detail/event-detail.component';
+import { EventListComponent } from './event/event-list/event-list.component';
 import { EventComponent } from './event/event.component';
 import { HomeComponent } from './home/home.component';
-import { LoginComponent } from './login/login.component';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { ProfileEditComponent } from './profile-edit/profile-edit.component';
-import { ProfileComponent } from './profile/profile.component';
-import { RegistrationComponent } from './registration/registration.component';
-import { TicketDetailComponent } from './ticket-detail/ticket-detail.component';
-import { TicketListComponent } from './ticket-list/ticket-list.component';
+import { TicketDetailComponent } from './ticket/ticket-detail/ticket-detail.component';
+import { TicketListComponent } from './ticket/ticket-list/ticket-list.component';
 import { TicketComponent } from './ticket/ticket.component';
+import { LoginComponent } from './user/login/login.component';
+import { ProfileEditComponent } from './user/profile-edit/profile-edit.component';
+import { ProfileComponent } from './user/profile/profile.component';
+import { RegistrationComponent } from './user/registration/registration.component';
 
 
 const routes: Routes = [
@@ -23,7 +23,7 @@ const routes: Routes = [
     children: [
       {path: 'list', component: EventListComponent},
       {path: 'new', component: EventDetailComponent},
-      {path: ':id/edit', component: EventDetailComponent}
+      {path: ':id', component: EventDetailComponent}
     ]
   },
   {
