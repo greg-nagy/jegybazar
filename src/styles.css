@@ -1,7 +1,10 @@
-/* You can add global styles to this file, and also import other style files */
 
-.content-container {
-  min-height: calc(100vh - 60px);
+/* global css*/
+html{
+  font-size: 12px;
+}
+body {
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
@@ -10,8 +13,14 @@
   flex: 1;
 }
 
-.lead {
+.lead{
   font-size: 1.2em;
+}
+
+.content-container {
+  min-height: calc(100vh - 60px);
+  display: flex;
+  flex-direction: column;
 }
 
 footer {
@@ -19,19 +28,30 @@ footer {
 }
 
 /* index.html css*/
-.index_card {
-  border: none;
+.index_card{
+  border:none;
 }
-
-.index_text {
+.index_text{
   min-height: 8em;
 }
 
-.index_btn_card {
-  width: 10em;
+.index_btn_card{
+  width:10em;
 }
 
-.calendar {
+.calendar{
   height: 50px;
-  width: 50px;
+  width:50px;
+}
+
+.profil{
+  height: 200px;
+  width:200px;
+}
+
+
+@media (min-width:768px){
+  html{
+    font-size:16px;
+  }
 }
