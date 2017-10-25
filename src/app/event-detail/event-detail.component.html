@@ -1,3 +1,47 @@
-<p>
-  event-detail works!
-</p>
+<div class="container">
+
+  <!--Form with header-->
+  <div class="card mb-4 col-11 col-sm-8 mx-auto p-0">
+
+    <div class="card-header">
+      <div class="bg-light text-center">
+        <h3>Új esemény létrehozása</h3>
+      </div>
+    </div>
+    <!--card-body-->
+    <div class="card-body">
+
+      <div class="form-group">
+        <label for="esemeny">Esemény címe:</label>
+        <input type="text" class="form-control mb-3" id="esemeny"
+               placeholder="Esemény címe">
+      </div>
+
+      <div class="form-group">
+        <label for="idopont">Esemény időpontja</label>
+        <input type="date" class="form-control mb-3" id="idopont"
+               placeholder="Esemény időpontja">
+      </div>
+
+      <div class="form-group row">
+        <img class="img-fluid mx-auto" src="assets/newevent.png" alt="">
+        <div class="form-group mx-auto mt-3">
+          <label for="kep">Válassz képet az eseményhez</label>
+          <input type="file" class="form-control-file" id="kep">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="leiras">Esemény leírása</label>
+        <textarea class="form-control" placeholder="Esemény leírása"
+                  id="leiras"></textarea>
+      </div>
+      <div class="text-center mb-3">
+        <input class="btn btn-primary btn-lg" type="submit"
+               routerLink="../../list"
+               value="létrehozás">
+      </div>
+    </div>
+  </div>
+
+</div>

@@ -1,3 +1,38 @@
-<p>
-  event-list works!
-</p>
+<div class="row  justify-content-around px-5 ">
+
+  <div class="col-auto text-center">
+    <label>Keresés az események között</label>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Esemény neve">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Keresés</button>
+    </form>
+  </div>
+
+  <div class="my-2 my-lg-0 text-center">
+    <div>
+      <label>Eseményt szeretnék létrehozni</label>
+    </div>
+    <div class="w-100"></div>
+    <div><a routerLink="../new" class="btn btn-primary" role="button">Új esemény
+      léterhozása</a></div>
+  </div>
+
+</div>
+
+<div class="card-deck">
+  <div class="card-deck pt-5 pb-5">
+    <app-eventcard class="col col-md-6 col-lg-4"></app-eventcard>
+    <app-eventcard class="col col-md-6 col-lg-4"></app-eventcard>
+    <app-eventcard class="col col-md-6 col-lg-4"></app-eventcard>
+  </div>
+  <div class="card-deck pt-5 pb-5">
+    <app-eventcard class="col col-md-6 col-lg-4"></app-eventcard>
+    <app-eventcard class="col col-md-6 col-lg-4"></app-eventcard>
+    <app-eventcard class="col col-md-6 col-lg-4"></app-eventcard>
+  </div>
+  <div class="card-deck pt-5 pb-5">
+    <app-eventcard class="col col-md-6 col-lg-4"></app-eventcard>
+    <app-eventcard class="col col-md-6 col-lg-4"></app-eventcard>
+    <app-eventcard class="col col-md-6 col-lg-4"></app-eventcard>
+  </div>
+</div>

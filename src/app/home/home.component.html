@@ -1,7 +1,54 @@
-<div class="container mt-5">
-  <div class="card-deck">
-    <app-eventcard class="col col-md-6 col-lg-4"></app-eventcard>
-    <app-eventcard class="col col-md-6 col-lg-4"></app-eventcard>
-    <app-eventcard class="col col-md-6 col-lg-4"></app-eventcard>
+<div class="container">
+
+  <div class="card-deck pt-5">
+
+    <div class="col col-md-6 col-lg-4">
+      <div class="index_card text-center">
+        <div class="row justify-content-center">
+          <img class="card-img-top img-fluid calendar" src="assets/calendar.png"
+               alt="Card image cap">
+        </div>
+        <div class="card-body">
+          <h4 class="card-title text-center">Események</h4>
+          <p class="index_text card-text">Itt találod a legtöbb jó bulit,
+            böngéssz bátran és keress vagy adj el jegyeket a barátaidnak, vagy
+            más felhasználóknak.</p>
+          <a routerLink="/event/list" class="btn btn-primary index_btn_card">Események</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col col-md-6 col-lg-4">
+      <div class="index_card text-center">
+        <div class="row justify-content-center">
+          <img class="card-img-top img-fluid calendar" src="assets/ticket.png"
+               alt="Card image cap">
+        </div>
+        <div class="card-body">
+          <h4 class="card-title text-center">Jegyek</h4>
+          <p class="index_text card-text">Ha sietsz, egyből kezdheted a jegyek
+            böngészésével is. Itt is tudsz keresni az esemény neve vagy
+            időpontja alapján.</p>
+          <a routerLink="/ticket/list" class="btn btn-primary index_btn_card">Jegyek</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col col-md-8 mx-md-auto col-lg-4">
+      <div class="index_card text-center col">
+        <div class="row justify-content-center">
+          <img class="card-img-top img-fluid calendar" src="assets/user.png"
+               alt="Card image cap">
+        </div>
+        <div class="card-body">
+          <h4 class="card-title">Regisztráció</h4>
+          <p class="index_text card-text">Még nem regisztráltál? Akkor gyorsan
+            tedd meg, mert a szolgáltatás csak tagonkak elérhető. Sőt, az újak
+            értékes ajándékot kapnak tőlünk.</p>
+          <a routerLink="/user/registration" class="btn btn-primary index_btn_card">Regisztráció</a>
+        </div>
+      </div>
+    </div>
+
   </div>
 </div>
