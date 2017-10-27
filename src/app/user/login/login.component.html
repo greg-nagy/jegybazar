@@ -19,36 +19,38 @@
       <div class="card border-secondary mt-3 mb-4">
         <div class="card-header">Bejelentkezés</div>
         <div class="card-body">
-          <form id="loginForm" novalidate>
-            <div class="form-group">
-              <label for="loginEmail">Email</label>
-              <input title="hibás email cím" name="loginEmail" type="email"
-                     class="form-control" id="loginEmail"
-                     placeholder="email">
-              <small id="emailHelp" class="form-text text-muted">a címed
-                nálunk biztonságban lesz
-              </small>
-            </div>
-            <div class="form-group">
-              <label for="loginPassword">Jelszó</label>
-              <input name="loginPassword" type="password"
-                     class="form-control" id="loginPassword"
-                     placeholder="jelszó">
-            </div>
-            <div class="form-check">
-              <label class="form-check-label">
-                <input name="rememberMe" type="checkbox"
-                       class="form-check-input">
-                emlékezz rám
-              </label>
-            </div>
-            <button type="submit"
-                    class="btn btn-primary"
-                    routerLink="/user"
+          <div class="form-group">
+            <label for="loginEmail">Email</label>
+            <input title="hibás email cím" name="loginEmail" type="email"
+                   class="form-control" id="loginEmail"
+                   placeholder="email"
+                   value="angular"
+                   #email
             >
-              belépés
-            </button>
-          </form>
+            <small id="emailHelp" class="form-text text-muted">a címed
+              nálunk biztonságban lesz
+            </small>
+          </div>
+          <div class="form-group">
+            <label for="loginPassword">Jelszó</label>
+            <input name="loginPassword" type="password"
+                   class="form-control" id="loginPassword"
+                   value="angular"
+                   #password
+                   placeholder="jelszó">
+          </div>
+          <div class="form-check">
+            <label class="form-check-label">
+              <input name="rememberMe" type="checkbox"
+                     class="form-check-input">
+              emlékezz rám
+            </label>
+          </div>
+          <button class="btn btn-primary"
+                  (click)="login(email.value, password.value)"
+          >
+            belépés
+          </button>
         </div>
       </div>
 
