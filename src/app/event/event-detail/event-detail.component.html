@@ -16,6 +16,7 @@
           <label for="esemeny">Esemény címe:</label>
           <input type="text" class="form-control mb-3" id="esemeny"
                  placeholder="Esemény címe"
+                 required
                  [(ngModel)]="event.name" name="name"
           >
         </div>
@@ -25,7 +26,14 @@
           <input type="text" class="form-control mb-3" id="idopont"
                  placeholder="Esemény időpontja"
                  [(ngModel)]="event.date" name="date"
+                 #tyup
           >
+          <div>{{ tyup.classList}}</div>
+          <hr>
+          <div>{{ tyup.className}}</div>
+          <hr>
+          form summa:
+          <div>{{ eventForm.touched }}</div>
         </div>
 
         <div class="form-group">
@@ -46,8 +54,12 @@
           ></textarea>
         </div>
         <div class="text-center mb-3">
-          <input class="btn btn-primary btn-lg" type="submit"
-                 value="létrehozás">
+          <button class="btn btn-primary btn-lg" type="submit"
+                  [disabled]="eventForm.invalid"
+                  value="létrehozás">
+            Save
+          </button>
+
         </div>
       </form>
     </div>
