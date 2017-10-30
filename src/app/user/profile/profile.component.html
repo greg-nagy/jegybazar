@@ -17,26 +17,24 @@
           <tbody>
           <tr>
             <th scope="row">Név:</th>
-            <td>Legyek Réka Matlida</td>
+            <td>{{ user.name }}</td>
           </tr>
           <tr>
             <th scope="row">Email-cím:</th>
-            <td>legyekrekamatilda@valami.com</td>
+            <td>{{ user.email }}</td>
           </tr>
           <tr>
             <th scope="row">Település:</th>
-            <td>Megyeszékhely</td>
+            <td>{{ user.address }}</td>
           </tr>
           <tr>
             <th scope="row">Születési idő /év/hónap/nap:</th>
-            <td>1985.07.08</td>
+            <td>{{ user.dateOfBirth }}</td>
           </tr>
           <tr>
             <th scope="row">Nem:</th>
-            <td>Lány</td>
+            <td>{{ user.gender }}</td>
           </tr>
-          <th scope="row">Jelszó:</th>
-          <td>********</td>
           </tbody>
         </table>
       </div>

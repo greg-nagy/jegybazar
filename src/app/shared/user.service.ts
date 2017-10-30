@@ -71,4 +71,8 @@ export class UserService {
     return user.length > 0 ? user[0] : new UserModel(UserModel.emptyUser);
   }
 
+  getCurrentUser() {
+    return this._user;
+  }
+
 }
