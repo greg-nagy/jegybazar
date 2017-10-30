@@ -10,6 +10,7 @@ import { JumbotronComponent } from './core/jumbotron/jumbotron.component';
 import { NavbarComponent } from './core/navbar/navbar.component';
 import { EventService } from './shared/event.service';
 import { UserService } from './shared/user.service';
+import { TicketService } from './shared/ticket.service';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import { UserService } from './shared/user.service';
     AlertModule.forRoot(),
     AppRoutingModule
   ],
-  providers: [EventService, UserService],
+  providers: [EventService, UserService, TicketService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
