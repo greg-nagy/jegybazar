@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { EventService } from '../../shared/event.service';
+import { ActivatedRoute, Router } from '@angular/router';
 import { EventModel } from '../../shared/event-model';
+import { EventService } from '../../shared/event.service';
 
 @Component({
   selector: 'app-event-detail',
@@ -12,7 +12,9 @@ export class EventDetailComponent implements OnInit {
   event: EventModel;
 
   constructor(private _route: ActivatedRoute,
-              private _eventService: EventService) {
+              private _eventService: EventService,
+              private _router: Router
+  ) {
   }
 
   ngOnInit() {
@@ -29,4 +31,14 @@ export class EventDetailComponent implements OnInit {
     }
   }
 
+  onSubmit(form) {
+    if (this.event.id) {
+      console.log('update agban vagyunk');
+      this._eventService.update(this.event);
+    } else {
+      console.log('create agban vagyunk');
+      this._eventService.create(this.event);
+    }
+    this._router.navigate(['/event/list']);
+  }
 }

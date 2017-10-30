@@ -81,5 +81,23 @@ export class EventService {
     const ev = this._events.filter(x => x.id === id);
     return ev.length > 0 ? ev[0] : new EventModel(EventModel.emptyEvent);
   }
+
+  update(ev: EventModel) {
+
+  }
+
+  create(param: EventModel) {
+    this._events = [
+      ...this._events,
+      {
+        id: this._getMaxId() + 1,
+        ...param
+      }
+    ];
+  }
+
+  private _getMaxId() {
+    return this._events.reduce((x, y) => x.id > y.id ? x : y).id;
+  }
 }
 
