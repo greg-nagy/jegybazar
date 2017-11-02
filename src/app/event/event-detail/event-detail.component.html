@@ -42,21 +42,19 @@
           </alert>
         </div>
 
-        <div class="form-group">
-          <div class="form-group mt-3">
-            <label for="pictureUrl">Válassz képet az eseményhez</label>
-            <input type="text" id="pictureUrl"
-                   class="form-control mb-3"
-                   placeholder="Eseményhez tartozo kep url-je"
-                   required
-                   [disabled]="!editForm"
-                   [(ngModel)]="event.pictureURL" name="picUrl"
-                   #picUrl="ngModel"
-            >
-            <alert type="danger" *ngIf="picUrl.touched && picUrl.invalid">
-              Kötelező mező!
-            </alert>
-          </div>
+        <div class="form-group mt-3">
+          <label for="pictureUrl">Válassz képet az eseményhez</label>
+          <input type="text" id="pictureUrl"
+                 class="form-control mb-3"
+                 placeholder="Eseményhez tartozo kep url-je"
+                 required
+                 [disabled]="!editForm"
+                 [(ngModel)]="event.pictureURL" name="picUrl"
+                 #picUrl="ngModel"
+          >
+          <alert type="danger" *ngIf="picUrl.touched && picUrl.invalid">
+            Kötelező mező!
+          </alert>
         </div>
 
         <div class="form-group">

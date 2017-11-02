@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container py-3">
 
 
   <!--Form with header-->
@@ -11,66 +11,112 @@
     </div>
 
     <div class="card-body">
+      <form #profileForm="ngForm" (ngSubmit)="onSubmit()">
 
-      <!--card-body-->
-
-      <div class="form-group">
-        <label for="nev">Név</label>
-        <input type="text" class="form-control mb-3" id="nev" placeholder="név">
-      </div>
-
-      <div class="form-group">
-        <label for="email">Email cím</label>
-        <input type="text" class="form-control mb-3" id="email" placeholder="email cím">
-      </div>
-
-      <div class="form-group">
-        <label for="szul">Születési idő</label>
-        <input type="date" class="form-control mb-3" id="szul" placeholder="születési idő">
-      </div>
-
-      <div class="">
-        <label class="pr-5">Nemed</label>
-
-        <div class="form-check form-check-inline">
-          <label class="form-check-label" for="fiu">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="fiu" value="option1">Fiú
-          </label>
+        <div class="form-group">
+          <label for="nev">Név</label>
+          <input type="text" id="nev"
+                 class="form-control mb-3"
+                 placeholder="név"
+                 required
+                 [(ngModel)]="user.name" name="name"
+                 #name="ngModel"
+          >
+          <alert type="danger" *ngIf="name.touched && name.invalid">
+            Kötelező mező!
+          </alert>
         </div>
 
-        <div class="form-check form-check-inline">
-          <label class="form-check-label" for="lany">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="lany" value="option2">Lány
-          </label>
+        <div class="form-group">
+          <label for="email">Email cím</label>
+          <input type="text" id="email"
+                 class="form-control mb-3"
+                 placeholder="email cím"
+                 required
+                 [(ngModel)]="user.email" name="email"
+                 #email="ngModel"
+          >
+          <alert type="danger" *ngIf="email.touched && email.invalid">
+            Kötelező mező!
+          </alert>
         </div>
 
-      </div>
+        <div class="form-group">
+          <label for="address">Lakcím</label>
+          <input type="text" id="address"
+                 class="form-control mb-3"
+                 placeholder="Lakcím"
+                 required
+                 [(ngModel)]="user.address" name="address"
+                 #address="ngModel"
+          >
+          <alert type="danger" *ngIf="address.touched && address.invalid">
+            Kötelező mező!
+          </alert>
+        </div>
 
-      <div class="form-group">
-        <label for="text">Település</label>
-        <select class="form-control mb-3" id="text">
-          <option>Főváros</option>
-          <option>Nagyváros</option>
-          <option>Kistelepülés</option>
-        </select>
-      </div>
+        <div class="form-group">
+          <label for="dateOfBirth">Születési idő</label>
+          <input type="date" id="dateOfBirth"
+                 class="form-control mb-3"
+                 placeholder="születési idő"
+                 required
+                 [(ngModel)]="user.dateOfBirth" name="dateOfBirth"
+                 #address="ngModel"
+          >
+          <alert type="danger" *ngIf="address.touched && address.invalid">
+            Kötelező mező!
+          </alert>
+        </div>
 
-      <div class="form-group">
-        <label for="jelszo1">Jelszó</label>
-        <input type="password" class="form-control mb-3" id="jelszo1" placeholder="Jelszó">
-      </div>
+        <div class="form-group">
+          <label class="pr-5">Nemed</label>
 
-      <div class="form-group">
-        <label for="jelszo2">Jelszó ismét</label>
-        <input type="password" class="form-control mb-3" id="jelszo2" placeholder="Jelszó ismét">
-      </div>
+          <div class="form-check form-check-inline">
+            <label class="form-check-label" for="fiu">
+              <input type="radio" id="fiu"
+                     class="form-check-input"
+                     [(ngModel)]="user.gender" name="gender"
+                     value="male"
+              >Fiú
+            </label>
+          </div>
 
-    </div>
+          <div class="form-check form-check-inline">
+            <label class="form-check-label" for="lany">
+              <input type="radio" id="lany"
+                     class="form-check-input"
+                     [(ngModel)]="user.gender" name="gender"
+                     value="female"
+              >Lány
+            </label>
+          </div>
 
-    <div class="text-center mb-3">
-      <input class="btn btn-primary btn-lg" type="submit" value="mentés" routerLink="/user">
+        </div>
+
+        <div class="form-group mt-3">
+          <label for="profilePictureUrl">Profil kép URL</label>
+          <input type="text" id="profilePictureUrl"
+                 class="form-control mb-3"
+                 placeholder="profilkepem url-je"
+                 required
+                 [(ngModel)]="user.profilePictureUrl" name="profilePictureUrl"
+                 #profilePictureUrl="ngModel"
+          >
+          <alert type="danger"
+                 *ngIf="profilePictureUrl.touched && profilePictureUrl.invalid">
+            Kötelező mező!
+          </alert>
+        </div>
+
+        <div class="text-center mb-3">
+          <button type="submit" class="btn btn-primary btn-lg"
+                  [disabled]="profileForm.invalid"
+          > Mentés
+          </button>
+        </div>
+      </form>
     </div>
 
   </div>
-
 </div>

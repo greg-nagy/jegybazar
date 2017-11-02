@@ -11,7 +11,8 @@
       </div>
 
       <div class="row justify-content-center bg-light m-0">
-        <img class="profil my-3 border" src="assets/profil.png" alt="Card image cap"></div>
+        <img class="profil my-3 border" [src]="user.profilePictureUrl"
+             alt="Card image cap"></div>
       <div class="card-body">
         <table class="table table-responsive">
           <tbody>
@@ -24,7 +25,7 @@
             <td>{{ user.email }}</td>
           </tr>
           <tr>
-            <th scope="row">Település:</th>
+            <th scope="row">Lakcím:</th>
             <td>{{ user.address }}</td>
           </tr>
           <tr>
@@ -40,8 +41,9 @@
       </div>
 
       <div class="text-center mb-3">
-        <a routerLink="./edit" class="btn btn-primary text-light ml-lg-2">Profil
-          módosítása</a>
+        <a routerLink="./edit" class="btn btn-primary text-light ml-lg-2">
+          Profilmódosítása
+        </a>
       </div>
 
     </div>
