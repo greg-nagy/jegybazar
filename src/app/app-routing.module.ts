@@ -14,7 +14,6 @@ import { TicketComponent } from './ticket/ticket.component';
 import { LoginComponent } from './user/login/login.component';
 import { ProfileEditComponent } from './user/profile-edit/profile-edit.component';
 import { ProfileComponent } from './user/profile/profile.component';
-import { RegistrationComponent } from './user/registration/registration.component';
 
 
 const routes: Routes = [
@@ -44,7 +43,7 @@ const routes: Routes = [
       {path: '', component: ProfileComponent, canActivate: [LoggedInGuardGuard]},
       {path: 'edit', component: ProfileEditComponent, canActivate: [LoggedInGuardGuard]},
       {path: 'login', component: LoginComponent},
-      {path: 'registration', component: RegistrationComponent}
+      {path: 'registration', component: ProfileEditComponent}
     ]
   },
   {path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -67,7 +66,6 @@ export class AppRoutingModule {
     BidComponent,
     AboutComponent,
     LoginComponent,
-    RegistrationComponent,
     ProfileComponent,
     ProfileEditComponent,
     PageNotFoundComponent

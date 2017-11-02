@@ -1,12 +1,11 @@
 <div class="container py-3">
 
-
-  <!--Form with header-->
   <div class="card mb-4 col-11 col-sm-8 mx-auto p-0">
 
     <div class="card-header">
       <div class="bg-light text-center">
-        <h3>Profil módosítása</h3>
+        <h3 *ngIf="user.id">Profil módosítása</h3>
+        <h3 *ngIf="!user.id">Regisztráció</h3>
       </div>
     </div>
 
@@ -109,7 +108,47 @@
           </alert>
         </div>
 
-        <div class="text-center mb-3">
+        <ng-container *ngIf="!user.id">
+
+          <div class="form-group">
+            <label for="registerPassword">Jelszó</label>
+            <input type="password" id="registerPassword"
+                   class="form-control"
+                   title="kis, nagybetű és szám, legalább nyolc karakter hosszan"
+                   placeholder="jelszó"
+                   pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,20}"
+                   required
+                   ngModel name="pass1"
+                   #pass1="ngModel"
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="registerPassword2">Jelszó</label>
+            <input type="password" id="registerPassword2"
+                   class="form-control"
+                   title="kis, nagybetű és szám, legalább nyolc karakter hosszan"
+                   placeholder="jelszó ismet"
+                   pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,20}"
+                   required
+                   ngModel name="pass2"
+                   #pass2="ngModel"
+            >
+          </div>
+          <alert type="danger"
+                 *ngIf="pass1.dirty && pass2.dirty && (pass1.invalid || pass2.invalid || (pass1.value !== pass2.value))">
+            A jelszavak nem megfelelőek!
+          </alert>
+
+          <div class="text-center mb-3">
+            <button type="submit" class="btn btn-primary btn-lg"
+                    [disabled]="profileForm.invalid || (pass1.value !== pass2.value)"
+            > Regisztráció
+            </button>
+          </div>
+        </ng-container>
+
+        <div class="text-center mb-3" *ngIf="user.id">
           <button type="submit" class="btn btn-primary btn-lg"
                   [disabled]="profileForm.invalid"
           > Mentés

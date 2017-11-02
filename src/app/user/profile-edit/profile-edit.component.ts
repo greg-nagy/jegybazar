@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { UserModel } from '../../shared/user-model';
 import { UserService } from '../../shared/user.service';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-profile-edit',
@@ -16,11 +16,15 @@ export class ProfileEditComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.user = this._userService.getCurrentUser();
+    this.user = this._userService.isLoggedin ? this._userService.getCurrentUser() : new UserModel();
   }
 
   onSubmit() {
-    this._userService.updateUser(this.user);
+    if (this.user.id) {
+      this._userService.updateUser(this.user);
+    } else {
+      this._userService.register(this.user);
+    }
     this._router.navigate(['/user']);
   }
 
