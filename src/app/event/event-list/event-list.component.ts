@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EventModel } from '../../shared/event-model';
 import { EventService } from '../../shared/event.service';
+import { UserService } from '../../shared/user.service';
 
 @Component({
   selector: 'app-event-list',
@@ -11,7 +12,9 @@ export class EventListComponent implements OnInit {
 // ez jo pelda lehet smart es dumb componentre
   public eventsGrouppedBy3: EventModel[];
 
-  constructor(private _eventService: EventService) {
+  constructor(private _eventService: EventService,
+              public userService: UserService
+              ) {
   }
 
   ngOnInit() {

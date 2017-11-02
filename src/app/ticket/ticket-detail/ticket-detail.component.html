@@ -1,7 +1,4 @@
 <div class="container">
-
-
-  <!--Form with header-->
   <div class="card mb-4 col-11 col-sm-8 mx-auto p-0">
 
     <div class="card-header">
@@ -12,62 +9,67 @@
 
     <div class="card-body">
 
-      <!--card-body-->
+      <form #ticketForm="ngForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="select">Esemény választása</label>
+          <select class="form-control" id="select"
+                  [(ngModel)]="ticket.eventId"
+                  name="eventId"
+                  required
+          >
+            <option selected hidden disabled value="0">Valassz egy esemenyt!</option>
+            <option *ngFor="let ev of events" [value]="ev.id">
+              {{ ev.name }}
+            </option>
+          </select>
+        </div>
 
-      <div class="form-group">
-        <label for="select">Esemény választása</label>
-        <select class="form-control" id="select">
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-          <option>5</option>
-        </select>
-      </div>
+        <div class="form-group">
+          <label for="idopont">Időpont</label>
+          <input type="date" class="form-control mb-3" id="idopont"
+                 placeholder="időpont"
+                 [(ngModel)]="ticket.date" name="date"
+          >
+        </div>
 
-      <div class="form-group">
-        <label for="idopont">Időpont</label>
-        <input type="date" class="form-control mb-3" id="idopont" placeholder="időpont">
-      </div>
+        <div class="form-group">
+          <label for="darab">Darabszám</label>
+          <input type="number" class="form-control mb-3" id="darab"
+                 placeholder="darabszám"
+                 [(ngModel)]="ticket.numberOfTickets" name="numberOfYickets"
+          >
+        </div>
 
-      <div class="form-group">
-        <label for="eloado">Előadó</label>
-        <input type="text" class="form-control mb-3" id="eloado" placeholder="előadó">
-      </div>
-
-      <div class="form-group">
-        <label for="darab">Darabszám</label>
-        <input type="number" class="form-control mb-3" id="darab" placeholder="darabszám">
-      </div>
-
-      <h4 class="my-3">Licit beállítások</h4>
+        <h4 class="my-3">Licit beállítások</h4>
 
         <div class="form-group">
           <label for="minlicit">Minimum licit érték</label>
-          <input type="number" class="form-control mb-3" id="minlicit" placeholder="Minimum licit érték">
+          <input type="number" class="form-control mb-3" id="minlicit"
+                 placeholder="Minimum licit érték"
+                 [(ngModel)]="ticket.minimalBidPrice" name="minimalBidPrice"
+          >
         </div>
 
         <div class="form-group">
           <label for="lepcso">Licit lépcső érték</label>
-          <input type="text" class="form-control mb-3" id="lepcso" placeholder="Licit lépcső érték">
+          <input type="text" class="form-control mb-3" id="lepcso"
+                 placeholder="Licit lépcső érték"
+                 [(ngModel)]="ticket.bidStep" name="bidStep"
+          >
         </div>
-
-        <div class="form-group">
-          <label for="ertek">Licit kezdete</label>
-          <input type="date" class="form-control mb-3" id="inlineFormInputGroupUsername" placeholder="Licit kezdete">
-        </div>
-
-        <div class="form-group">
-          <label>Licit vége</label>
-          <input type="date" class="form-control mb-3" id="ertek" placeholder="Licit vége">
-        </div>
-
 
         <div class="text-center mb-3">
-          <input class="btn btn-primary btn-lg" routerLink="../list" type="submit" value="Licit indítása">
-          <input class="btn btn-secondary btn-lg" routerLink="../list" type="submit" value="mégsem">
+          <button class="btn btn-primary btn-lg"
+                  type="submit"
+                  value="Licit indítása"
+          >Licit indítása</button>
+          <button class="btn btn-secondary btn-lg"
+                  type="button"
+                  routerLink="../"
+          >Mégsem</button>
         </div>
 
+      </form>
     </div>
   </div>
 </div>

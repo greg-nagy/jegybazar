@@ -12,7 +12,7 @@ export class TicketListComponent implements OnInit {
   public tickets: TicketModel[];
 
   constructor(private _ticketService: TicketService,
-              private _userService: UserService) {
+              public userService: UserService) {
   }
 
   ngOnInit() {

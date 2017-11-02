@@ -8,12 +8,12 @@
     </form>
   </div>
 
-  <div class="my-2 my-lg-0 text-center">
+  <div class="my-2 my-lg-0 text-center" *ngIf="userService.isLoggedin">
     <div>
       <label>Eseményt szeretnék létrehozni</label>
     </div>
     <div class="w-100"></div>
-    <div><a routerLink="../new" class="btn btn-primary" role="button">Új esemény
+    <div><a routerLink="./new" class="btn btn-primary" role="button">Új esemény
       léterhozása</a></div>
   </div>
 
@@ -21,9 +21,9 @@
 
 <div class="card-deck">
   <div class="card-deck pt-5 pb-5" *ngFor="let evg of eventsGrouppedBy3">
-  <app-eventcard class="col col-md-6 col-lg-4"
-                 *ngFor="let ev of evg"
-                 [esemeny]="ev"
-  ></app-eventcard>
+    <app-eventcard class="col col-md-6 col-lg-4"
+                   *ngFor="let ev of evg"
+                   [esemeny]="ev"
+    ></app-eventcard>
   </div>
 </div>
