@@ -6,6 +6,7 @@ import { EventDetailComponent } from './event/event-detail/event-detail.componen
 import { EventListComponent } from './event/event-list/event-list.component';
 import { EventComponent } from './event/event.component';
 import { HomeComponent } from './home/home.component';
+import { LoggedInGuardGuard } from './shared/logged-in-guard.guard';
 import { BidComponent } from './ticket/bid/bid.component';
 import { TicketDetailComponent } from './ticket/ticket-detail/ticket-detail.component';
 import { TicketListComponent } from './ticket/ticket-list/ticket-list.component';
@@ -14,7 +15,6 @@ import { LoginComponent } from './user/login/login.component';
 import { ProfileEditComponent } from './user/profile-edit/profile-edit.component';
 import { ProfileComponent } from './user/profile/profile.component';
 import { RegistrationComponent } from './user/registration/registration.component';
-import { LoggedInGuardGuard } from './shared/logged-in-guard.guard';
 
 
 const routes: Routes = [
@@ -25,7 +25,7 @@ const routes: Routes = [
     children: [
       {path: '', component: EventListComponent},
       {path: 'new', component: EventDetailComponent, canActivate: [LoggedInGuardGuard]},
-      {path: ':id', component: EventDetailComponent, canActivate: [LoggedInGuardGuard]}
+      {path: ':id', component: EventDetailComponent}
     ]
   },
   {

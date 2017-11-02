@@ -70,7 +70,7 @@ export class EventService {
         'id': 4,
         'name': 'Fezen',
         'date': '2017-08-03',
-        'pictureURL': 'http://mafsz.org/wp-content/uploads/2014/05/fezen.png',
+        'pictureURL': 'http://www.kate.hu/wp-content/uploads/2015/07/135599150312020929_fezen_2015_datummal.jpg',
         'description': 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo.'
       }),
       new EventModel({
