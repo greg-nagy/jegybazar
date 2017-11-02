@@ -25,11 +25,14 @@ export class TicketService {
   create(param: TicketModel) {
     this._tickets = [
       ...this._tickets,
-      {
+      new TicketModel({
         id: this._tickets.reduce((x, y) => x.id > y.id ? x : y).id + 1,
-        ...param
-      }
+        ...param,
+        event: this._eventService.getEventById(param.eventId),
+        seller: this._userService.getUserById(param.sellerUserId)
+      })
     ];
+    console.log(this._tickets);
   }
 
   private _getMockData() {

@@ -14,7 +14,7 @@ export class EventService {
   }
 
   getEventById(id: number) {
-    const ev = this._events.filter(x => x.id === id);
+    const ev = this._events.filter(x => x.id === +id);
     return ev.length > 0 ? ev[0] : new EventModel(EventModel.emptyEvent);
   }
 
