@@ -19,9 +19,33 @@
 
 </div>
 
-<div class="card-deck pt-5 pb-5" *ngFor="let evg of eventsGrouppedBy3">
+
+<div class="card-deck pt-5 pb-5" *ngFor="let evg of eventsGrouppedBy3$ | async">
   <app-eventcard class="col col-md-6 col-lg-4"
                  *ngFor="let ev of evg"
                  [esemeny]="ev"
-  ></app-eventcard>
-</div>
+  >
+  </app-eventcard>
+</div>˚
+
+<!--<div class="card-deck pt-5 pb-5" *ngFor="let evg of eventsGrouppedBy3">-->
+  <!--<app-eventcard class="col col-md-6 col-lg-4"-->
+                 <!--*ngFor="let ev of evg"-->
+                 <!--[esemeny]="ev"-->
+  <!--&gt;-->
+  <!--</app-eventcard>-->
+<!--</div>-->
+
+<!--<app-eventcard class="col col-md-6 col-lg-4"-->
+<!--*ngFor="let ev of events$ | async"-->
+<!--[esemeny]="ev"-->
+<!--&gt;-->
+<!--</app-eventcard>-->
+
+
+<!--<div class="card-deck pt-5 pb-5" *ngFor="let evg of eventsGrouppedBy3">-->
+<!--<app-eventcard class="col col-md-6 col-lg-4"-->
+<!--*ngFor="let ev of evg"-->
+<!--[esemeny]="ev"-->
+<!--&gt;</app-eventcard>-->
+<!--</div>-->

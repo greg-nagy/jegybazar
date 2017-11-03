@@ -25,7 +25,7 @@ export class EventDetailComponent implements OnInit {
     // mert routing-ban ami jon az biza string
     const evId = +this._route.snapshot.params['id'];
     if (evId) {
-      this.event = this._eventService.getEventById(evId);
+      // this.event = this._eventService.getEventById(evId);
       console.log('kaptunk eventid-t', evId);
       console.log('kaptunk eventet', this.event);
     } else {

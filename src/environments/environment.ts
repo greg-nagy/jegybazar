@@ -4,5 +4,11 @@
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebase: {
+    baseUrl: 'https://jegybazar-27302.firebaseio.com',
+    registrationUrl: ' https://www.googleapis.com/identitytoolkit/v3/relyingparty/signupNewUser',
+    loginUrl: ' https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword',
+    apikey: 'AIzaSyALPBS-gllA6F-vRya-6pYZXABheOWFYlw'
+  }
 };

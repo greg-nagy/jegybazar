@@ -1,42 +1,46 @@
 import { Injectable } from '@angular/core';
 import { EventModel } from './event-model';
+import { HttpClient } from '@angular/common/http';
+import { environment } from '../../environments/environment';
+import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class EventService {
   private _events: EventModel[];
 
-  constructor() {
+  constructor(private _http: HttpClient) {
     this._events = this._getMockData();
   }
 
-  getAllEvents(): EventModel[] {
-    return this._events;
+  getAllEvents(): Observable<EventModel[]> {
+    return this._http.get(`${environment.firebase.baseUrl}/events.json`)
+      .map(data => Object.values(data).map(evm => new EventModel(evm)));
   }
 
   getEventById(id: number) {
-    const ev = this._events.filter(x => x.id === +id);
-    return ev.length > 0 ? ev[0] : new EventModel(EventModel.emptyEvent);
+    // const ev = this._events.filter(x => x.id === +id);
+    // return ev.length > 0 ? ev[0] : new EventModel(EventModel.emptyEvent);
   }
 
   update(param: EventModel) {
-    this._events = this._events.map(ev => {
-      // if (ev.id === param.id) {
-      //   return {...param};
-      // } else {
-      //   return ev;
-      // }
-      return ev.id === param.id ? {...param} : ev;
-    });
+    // this._events = this._events.map(ev => {
+    //   // if (ev.id === param.id) {
+    //   //   return {...param};
+    //   // } else {
+    //   //   return ev;
+    //   // }
+    //   return ev.id === param.id ? {...param} : ev;
+    // });
   }
 
   create(param: EventModel) {
-    this._events = [
-      ...this._events,
-      {
-        id: this._getMaxId() + 1,
-        ...param
-      }
-    ];
+    // this._events = [
+    //   ...this._events,
+    //   {
+    //     id: this._getMaxId() + 1,
+    //     ...param
+    //   }
+    // ];
   }
 
   private _getMaxId() {
