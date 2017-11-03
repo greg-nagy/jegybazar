@@ -1,0 +1,161 @@
+{
+  "events" : {
+    "-Ky0E6CbE8qAxNntn8bj" : {
+      "date" : "2017-08-03",
+      "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo.",
+      "id" : "-Ky0E6CbE8qAxNntn8bj",
+      "name" : "Sziget Fesztivál",
+      "pictureURL" : "http://www.fortitudemagazine.co.uk/wp-content/uploads/2017/04/sziget_og_image.jpg"
+    },
+    "-Ky0EDGGrXHMYdns10L_" : {
+      "date" : "2017-11-23",
+      "description" : "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
+      "id" : "-Ky0EDGGrXHMYdns10L_",
+      "name" : "Diótörő Balett",
+      "pictureURL" : "http://www.e-jegyiroda.hu/img/diotoro-jegyek-budapest-szeged-kecskemet-balett-mese-babjatek.jpg"
+    },
+    "-Ky0EKWDcRlYVCoRxwUy" : {
+      "date" : "2018-02-11",
+      "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, necessitatibus.",
+      "id" : "-Ky0EKWDcRlYVCoRxwUy",
+      "name" : "Macskák Musical",
+      "pictureURL" : "https://pb2.jegy.hu/imgs/system-4/program/000/016/918/macskak-original-54100.jpg"
+    },
+    "-Ky0EOBRvrSTeR2dw1zZ" : {
+      "date" : "2017-08-03",
+      "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo.",
+      "id" : "-Ky0EOBRvrSTeR2dw1zZ",
+      "name" : "Fezen",
+      "pictureURL" : "http://www.kate.hu/wp-content/uploads/2015/07/135599150312020929_fezen_2015_datummal.jpg"
+    },
+    "-Ky0EgjgM-yrJfRAa3Dr" : {
+      "date" : "2017-11-23",
+      "description" : "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
+      "id" : "-Ky0EgjgM-yrJfRAa3Dr",
+      "name" : "SZIN",
+      "pictureURL" : "https://www.koncert.hu/uploads/concerts/koncert-20140625-11470-szin_2014_2.jpg"
+    },
+    "-Ky0EmBImsuc6RPV0BIH" : {
+      "date" : "2018-02-11",
+      "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, necessitatibus.",
+      "id" : "-Ky0EmBImsuc6RPV0BIH",
+      "name" : "Rockmaraton",
+      "pictureURL" : "http://www.rockmaraton.hu/media/images/rockmaraton-2018-jegyvasarlas.jpg"
+    },
+    "-Ky0Euc2W2JkH-N8qw5z" : {
+      "date" : "2017-08-03",
+      "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo.",
+      "id" : "-Ky0Euc2W2JkH-N8qw5z",
+      "name" : "Black Hat USA",
+      "pictureURL" : "https://www.blackhat.com/images/page-graphics/metatag/event-logo-us17.png"
+    },
+    "-Ky0F3kr0eHrm5T8HgVP" : {
+      "date" : "2017-11-23",
+      "description" : "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
+      "id" : "-Ky0F3kr0eHrm5T8HgVP",
+      "name" : "TEDx",
+      "pictureURL" : "https://i0.wp.com/www.tedxwellington.com/wp-content/uploads/2017/02/tedx-bulb.jpg"
+    },
+    "-Ky0FG-p593HsAFNPF_-" : {
+      "date" : "2018-02-11",
+      "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, necessitatibus.",
+      "id" : "-Ky0FG-p593HsAFNPF_-",
+      "name" : "ng-conf",
+      "pictureURL" : "https://cdn-images-1.medium.com/max/1270/1*2j7MOWb0s5pZpQLu7d-5CQ.png"
+    }
+  },
+  "tickets" : {
+    "-Ky0HolLJBH3Q5uVHWZf" : {
+      "bidStep" : 500,
+      "date" : "2018-05-02",
+      "eventId" : "-Ky0EOBRvrSTeR2dw1zZ",
+      "id" : "-Ky0HolLJBH3Q5uVHWZf",
+      "minimalBidPrice" : 2000,
+      "numberOfTickets" : 5,
+      "sellerUserId" : "-Ky0CVPDvbJmmeyAggMr"
+    },
+    "-Ky0Hz4uP2Es-j9q_Cmw" : {
+      "bidStep" : 1000,
+      "date" : "2018-10-12",
+      "eventId" : "-Ky0E6CbE8qAxNntn8bj",
+      "id" : "-Ky0Hz4uP2Es-j9q_Cmw",
+      "minimalBidPrice" : 4000,
+      "numberOfTickets" : 4,
+      "sellerUserId" : "-Ky0CctiCtXXqcrDxJw9"
+    },
+    "-Ky0I4C7RzhYJGKP_PAH" : {
+      "bidStep" : 2000,
+      "date" : "2018-10-02",
+      "eventId" : "-Ky0EDGGrXHMYdns10L_",
+      "id" : "-Ky0I4C7RzhYJGKP_PAH",
+      "minimalBidPrice" : 5000,
+      "numberOfTickets" : 7,
+      "sellerUserId" : "-Ky0CqiDVsXAbshfMZ6H"
+    },
+    "-Ky0IZDTNtGAjytLjtoM" : {
+      "bidStep" : 1000,
+      "date" : "2019-06-04",
+      "eventId" : "-Ky0EgjgM-yrJfRAa3Dr",
+      "id" : "-Ky0IZDTNtGAjytLjtoM",
+      "minimalBidPrice" : 10000,
+      "numberOfTickets" : 5,
+      "sellerUserId" : "-Ky0CctiCtXXqcrDxJw9"
+    },
+    "-Ky0Ik33L4iyTllI2kFe" : {
+      "bidStep" : 2000,
+      "date" : "2018-11-06",
+      "eventId" : "-Ky0Euc2W2JkH-N8qw5z",
+      "id" : "-Ky0Ik33L4iyTllI2kFe",
+      "minimalBidPrice" : 20000,
+      "numberOfTickets" : 2,
+      "sellerUserId" : "-Ky0CctiCtXXqcrDxJw9"
+    },
+    "-Ky0Iqc3wHhZjgnkC9n0" : {
+      "bidStep" : 1500,
+      "date" : "2019-11-06",
+      "eventId" : "-Ky0FG-p593HsAFNPF_-",
+      "id" : "-Ky0Iqc3wHhZjgnkC9n0",
+      "minimalBidPrice" : 15000,
+      "numberOfTickets" : 1,
+      "sellerUserId" : "-Ky0D91XU3sLX9JHISVW"
+    }
+  },
+  "users" : {
+    "-Ky0CVPDvbJmmeyAggMr" : {
+      "address" : "Futrinka utca",
+      "dateOfBirth" : "2001.01.01",
+      "email" : "legyekrekamatilda@valami.com",
+      "gender" : "female",
+      "id" : "-Ky0CVPDvbJmmeyAggMr",
+      "name" : "Legyek Réka Matlida",
+      "profilePictureUrl" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4nBubms8tp5EDXG6LBhVyy4AES2WCqceh674hyF6rNwjYoJ4ddQ"
+    },
+    "-Ky0CctiCtXXqcrDxJw9" : {
+      "address" : "pistaba lak 12",
+      "dateOfBirth" : "1900-01-01",
+      "email" : "pistaba@pistaba.com",
+      "gender" : "male",
+      "id" : "-Ky0CctiCtXXqcrDxJw9",
+      "name" : "Pista ba",
+      "profilePictureUrl" : "http://3.bp.blogspot.com/-bUS0WbXC1YA/Uz0di05mS_I/AAAAAAAAQGg/u9o_g9VDTSg/s1600/pista_ba_animacio.jpg"
+    },
+    "-Ky0CqiDVsXAbshfMZ6H" : {
+      "address" : "marcsa var 42.",
+      "dateOfBirth" : "2000-01-01",
+      "email" : "marcsa@marcsa.hu",
+      "gender" : "female",
+      "id" : "-Ky0CqiDVsXAbshfMZ6H",
+      "name" : "Marcsa",
+      "profilePictureUrl" : "https://i.pinimg.com/236x/2c/80/53/2c80536d805ca08bd1f87d9db9fb9955--funny-wallpapers-wallpaper-iphone.jpg"
+    },
+    "-Ky0D91XU3sLX9JHISVW" : {
+      "address" : "namek",
+      "dateOfBirth" : "2199-02-01",
+      "email" : "mzx@mzx.hu",
+      "gender" : "male",
+      "id" : "-Ky0D91XU3sLX9JHISVW",
+      "name" : "ifju satan",
+      "profilePictureUrl" : "https://www.minihero.hu/wp-content/uploads/funko-pop-ifju-satan.jpg"
+    }
+  }
+}
