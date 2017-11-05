@@ -19,25 +19,17 @@ export class EventService {
     return this._http.get<EventModel>(`${environment.firebase.baseUrl}/events/${id}.json`);
   }
 
-  update(param: EventModel) {
-    // this._events = this._events.map(ev => {
-    //   // if (ev.id === param.id) {
-    //   //   return {...param};
-    //   // } else {
-    //   //   return ev;
-    //   // }
-    //   return ev.id === param.id ? {...param} : ev;
-    // });
+  save(param: EventModel) {
+    console.log(param);
+    if (param.id) {
+      return this._http.put(`${environment.firebase.baseUrl}/events/${param.id}.json`, param);
+    } else {
+      return this._http.post(`${environment.firebase.baseUrl}/events.json`, param);
+    }
   }
 
-  create(param: EventModel) {
-    // this._events = [
-    //   ...this._events,
-    //   {
-    //     id: this._getMaxId() + 1,
-    //     ...param
-    //   }
-    // ];
+  delete(param: EventModel) {
+    return this._http.delete(`${environment.firebase.baseUrl}/events/${param.id}.json`);
   }
 }
 

@@ -18,7 +18,7 @@
                  class="form-control mb-3"
                  placeholder="Esemény címe"
                  required
-                 [disabled]="!editForm"
+                 [disabled]="viewForm"
                  [(ngModel)]="event.name" name="name"
                  #name="ngModel"
           >
@@ -33,7 +33,7 @@
                  class="form-control mb-3"
                  placeholder="Esemény időpontja"
                  required
-                 [disabled]="!editForm"
+                 [disabled]="viewForm"
                  [(ngModel)]="event.date" name="date"
                  #date="ngModel"
           >
@@ -48,7 +48,7 @@
                  class="form-control mb-3"
                  placeholder="Eseményhez tartozo kep url-je"
                  required
-                 [disabled]="!editForm"
+                 [disabled]="viewForm"
                  [(ngModel)]="event.pictureURL" name="picUrl"
                  #picUrl="ngModel"
           >
@@ -63,7 +63,7 @@
                     class="form-control"
                     placeholder="Esemény leírása"
                     required
-                    [disabled]="!editForm"
+                    [disabled]="viewForm"
                     [(ngModel)]="event.description" name="description"
                     #description="ngModel"
           ></textarea>
@@ -72,26 +72,33 @@
           </alert>
         </div>
         <div class="text-center mb-3">
-          <button type="submit"
-                  class="btn btn-primary btn-lg"
-                  *ngIf="editForm"
-                  [disabled]="eventForm.invalid"
-                  value="létrehozás"
-          >Mentes
-          </button>
+          <ng-container *ngIf="userService.isLoggedin">
+            <ng-container *ngIf="viewForm; else editButtons">
+              <button type="button"
+                      class="btn btn-primary btn-lg"
+                      (click)="viewForm = false"
+              >Szerkesztes
+              </button>
+            </ng-container>
+            <ng-template #editButtons>
+              <button type="submit"
+                      class="btn btn-primary btn-lg"
+                      [disabled]="eventForm.invalid"
+              >Mentés
+              </button>
+              <button type="button"
+                      class="btn btn-danger btn-lg"
+                      (click)="delete()"
+                      *ngIf="event.id"
+              >Törlés
+              </button>
+            </ng-template>
+          </ng-container>
           <button type="button"
                   class="btn btn-primary btn-lg"
-                  *ngIf="!editForm && userService.isLoggedin"
-                  (click)="editForm = true"
-          >Szerkesztes
-          </button>
-          <button type="button"
-                  class="btn btn-primary btn-lg"
-                  *ngIf="!userService.isLoggedin"
                   (click)="navigateBack()"
           >Vissza
           </button>
-
         </div>
       </form>
     </div>
