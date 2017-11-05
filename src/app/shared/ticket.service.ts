@@ -61,14 +61,27 @@ export class TicketService {
   }
 
   create(param: TicketModel) {
-    return this._http.post(`${environment.firebase.baseUrl}/tickets.json`, param)
-    // ez itt amiatt kell, hogy meglegyen a fbid objektumon belul is,
-    // mert kesobb epitunk erre az infora
-    // viszont ezt csak a post valaszaban kapjuk vissza
-    // es legalabb hasznaljuk a patch-et is :)
-      .switchMap((fbPostReturn: { name: string }) => this._http.patch(
-        `${environment.firebase.baseUrl}/tickets/${fbPostReturn.name}.json`,
-        {id: fbPostReturn.name}
-      ));
+    return this._http
+      .post<{ name: string }>(`${environment.firebase.baseUrl}/tickets.json`, param)
+      // konnyitsuk meg magunknak kicsit az eletunket es kuldjuk tovabb csak azt ami kell nekunk
+      .map(fbPostReturn => fbPostReturn.name)
+      // ez itt amiatt kell, hogy meglegyen a fbid objektumon belul is,
+      // mert kesobb epitunk erre az infora
+      // viszont ezt csak a post valaszaban kapjuk vissza
+      // es legalabb hasznaljuk a patch-et is :)
+      .switchMap(ticketId => this._saveGeneratedId(ticketId))
+      // keszitsuk kicsit elo a jovilagot es vezessuk esemenyeknel is a hozzajuk tartozo ticketeket
+      .switchMap(ticketId => this._eventService.addTicket(param.eventId, ticketId))
+      // keszitsuk kicsit elo a jovilagot es vezessuk a profilunknal a hozzank tartozo ticketeket
+      .switchMap(ticketId => this._userService.addTicket(ticketId))
+      ;
+  }
+
+  private _saveGeneratedId(ticketId: string): Observable<string> {
+    return this._http.patch<{ id: string }>(
+      `${environment.firebase.baseUrl}/tickets/${ticketId}.json`,
+      {id: ticketId}
+    )
+      .map(x => x.id);
   }
 }

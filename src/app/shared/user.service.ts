@@ -90,6 +90,14 @@ export class UserService {
       .map(usersObject => Object.values(usersObject).map(user => new UserModel(user)));
   }
 
+  addTicket(ticketId: string): Observable<string> {
+    return this._http.patch(
+      `${environment.firebase.baseUrl}/users/${this._user.id}/tickets.json`,
+      { [ticketId]: true}
+    )
+      .map(rel => Object.keys(rel)[0]);
+  }
+
   // TODO: refreshtoken-t lekezelni
   // TODO: auth query parameterre megirni az itnerceptort
   // TODO: rememberme-t lekezelni localstorage-el

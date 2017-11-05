@@ -4,6 +4,7 @@ export class EventModel {
   date: string; // na ezt azert prodban ezt szebben kene :)
   pictureURL: string;
   description: string;
+  tickets: { [key: string]: string };
 
   constructor(param?: EventModel) {
     if (param) {
