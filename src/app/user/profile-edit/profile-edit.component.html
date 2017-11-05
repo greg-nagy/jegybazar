@@ -10,7 +10,7 @@
     </div>
 
     <div class="card-body">
-      <form #profileForm="ngForm" (ngSubmit)="onSubmit()">
+      <form #profileForm="ngForm" (ngSubmit)="updateUser()">
 
         <div class="form-group">
           <label for="nev">Név</label>
@@ -141,8 +141,9 @@
           </alert>
 
           <div class="text-center mb-3">
-            <button type="submit" class="btn btn-primary btn-lg"
+            <button type="button" class="btn btn-primary btn-lg"
                     [disabled]="profileForm.invalid || (pass1.value !== pass2.value)"
+                    (click)="createUser(pass1.value)"
             > Regisztráció
             </button>
           </div>

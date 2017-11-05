@@ -1,5 +1,5 @@
 export class EventModel {
-  id?: string;
+  id: string;
   name: string;
   date: string; // na ezt azert prodban ezt szebben kene :)
   pictureURL: string;
@@ -9,14 +9,5 @@ export class EventModel {
     if (param) {
       Object.assign(this, param);
     }
-  }
-
-  static get emptyEvent() {
-    return {
-      'name': '',
-      'date': '',
-      'pictureURL': '',
-      'description': ''
-    };
   }
 }

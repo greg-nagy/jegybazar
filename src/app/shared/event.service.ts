@@ -15,15 +15,15 @@ export class EventService {
       .map(data => Object.values(data).map(evm => new EventModel(evm)));
   }
 
-  getEventById(id: number) {
+  getEventById(id: string) {
     return this._http.get<EventModel>(`${environment.firebase.baseUrl}/events/${id}.json`);
   }
 
   save(param: EventModel) {
     console.log(param);
-    if (param.id) {
+    if (param.id) { // udpate ag
       return this._http.put(`${environment.firebase.baseUrl}/events/${param.id}.json`, param);
-    } else {
+    } else { // create ag
       return this._http.post(`${environment.firebase.baseUrl}/events.json`, param);
     }
   }
