@@ -19,7 +19,6 @@ export class TicketService {
               private _http: HttpClient) {
   }
 
-
   // Mi is tortenik itt, mert izi :) - logikai lepesekkel, hogy hogyan epulunk fel
   // 1. lepesben lekerjuk http.get-el az osszes ticketet, amik objectben erkeznek meg
   //    {key1: ticketObject1, key2: TicketObject2, key3: ticketObject3, ...}
@@ -62,6 +61,14 @@ export class TicketService {
   }
 
   create(param: TicketModel) {
-    return this._http.post(`${environment.firebase.baseUrl}/tickets.json`, param);
+    return this._http.post(`${environment.firebase.baseUrl}/tickets.json`, param)
+    // ez itt amiatt kell, hogy meglegyen a fbid objektumon belul is,
+    // mert kesobb epitunk erre az infora
+    // viszont ezt csak a post valaszaban kapjuk vissza
+    // es legalabb hasznaljuk a patch-et is :)
+      .switchMap((fbPostReturn: { name: string }) => this._http.patch(
+        `${environment.firebase.baseUrl}/tickets/${fbPostReturn.name}.json`,
+        {id: fbPostReturn.name}
+      ));
   }
 }
