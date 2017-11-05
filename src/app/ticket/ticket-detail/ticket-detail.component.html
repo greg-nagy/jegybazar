@@ -18,12 +18,12 @@
                   required
                   #event="ngModel"
           >
-            <option selected hidden disabled value="0">Valassz egy esemenyt!</option>
-            <option *ngFor="let ev of events" [value]="ev.id">
+            <option selected hidden disabled value="">Valassz egy esemenyt!</option>
+            <option *ngFor="let ev of events$ | async" [value]="ev.id">
               {{ ev.name }}
             </option>
           </select>
-          <alert type="danger" *ngIf="event.touched && event.pristine">Kötelező mező!
+          <alert type="danger" *ngIf="event.touched && event.value === ''">Kötelező mező!
           </alert>
         </div>
 
@@ -31,11 +31,11 @@
           <label for="idopont">Időpont</label>
           <input type="date" class="form-control mb-3" id="idopont"
                  placeholder="időpont"
-                 [(ngModel)]="ticket.date" name="date"
                  required
+                 [(ngModel)]="ticket.date" name="date"
                  #date="ngModel"
           >
-          <alert type="danger" *ngIf="date.touched && date.pristine">Kötelező mező!
+          <alert type="danger" *ngIf="date.touched && date.invalid">Kötelező mező!
           </alert>
         </div>
 
@@ -43,10 +43,11 @@
           <label for="darab">Darabszám</label>
           <input type="number" class="form-control mb-3" id="darab"
                  placeholder="darabszám"
+                 required
                  [(ngModel)]="ticket.numberOfTickets" name="numberOfTickets"
                  #numberOfTickets="ngModel"
           >
-          <alert type="danger" *ngIf="numberOfTickets.touched && numberOfTickets.pristine">
+          <alert type="danger" *ngIf="numberOfTickets.touched && numberOfTickets.invalid">
             Kötelező mező!
           </alert>
         </div>
@@ -57,10 +58,11 @@
           <label for="minlicit">Minimum licit érték</label>
           <input type="number" class="form-control mb-3" id="minlicit"
                  placeholder="Minimum licit érték"
+                 required
                  [(ngModel)]="ticket.minimalBidPrice" name="minimalBidPrice"
                  #minimalBidPrice="ngModel"
           >
-          <alert type="danger" *ngIf="minimalBidPrice.touched && minimalBidPrice.pristine">
+          <alert type="danger" *ngIf="minimalBidPrice.touched && minimalBidPrice.invalid">
             Kötelező mező!
           </alert>
         </div>
@@ -69,21 +71,22 @@
           <label for="lepcso">Licit lépcső érték</label>
           <input type="text" class="form-control mb-3" id="lepcso"
                  placeholder="Licit lépcső érték"
+                 required
                  [(ngModel)]="ticket.bidStep" name="bidStep"
                  #bidStep="ngModel"
           >
-          <alert type="danger" *ngIf="bidStep.touched && bidStep.pristine">Kötelező mező!
+          <alert type="danger" *ngIf="bidStep.touched && bidStep.invalid">Kötelező mező!
           </alert>
         </div>
 
         <div class="text-center mb-3">
-          <button class="btn btn-primary btn-lg"
-                  type="submit"
-                  [disabled]="event.pristine || date.pristine || numberOfTickets.pristine || minimalBidPrice.pristine || bidStep.pristine"
+          <button type="submit"
+                  class="btn btn-primary btn-lg"
+                  [disabled]="ticketForm.invalid"
           >Licit indítása
           </button>
-          <button class="btn btn-secondary btn-lg"
-                  type="button"
+          <button type="button"
+                  class="btn btn-secondary btn-lg"
                   routerLink="../"
           >Mégsem
           </button>

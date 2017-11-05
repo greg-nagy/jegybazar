@@ -1,5 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs/Subscription';
+import { Component, OnInit } from '@angular/core';
 import { UserModel } from '../../shared/user-model';
 import { UserService } from '../../shared/user.service';
 
@@ -8,20 +7,13 @@ import { UserService } from '../../shared/user.service';
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.css']
 })
-export class ProfileComponent implements OnInit, OnDestroy {
+export class ProfileComponent implements OnInit {
   user: UserModel;
-
-  private _subs: Subscription;
 
   constructor(private _userService: UserService) {
   }
 
   ngOnInit() {
-    this._subs = this._userService.getCurrentUser().subscribe(user => this.user = user);
-  }
-
-  ngOnDestroy() {
-    // csak hogy legyen ilyen is
-    this._subs.unsubscribe();
+    this.user = this._userService.getCurrentUser();
   }
 }

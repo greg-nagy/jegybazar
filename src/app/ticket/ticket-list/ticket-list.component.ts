@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
 import { TicketModel } from '../../shared/ticket-model';
 import { TicketService } from '../../shared/ticket.service';
 import { UserService } from '../../shared/user.service';
@@ -9,14 +10,13 @@ import { UserService } from '../../shared/user.service';
   styleUrls: ['./ticket-list.component.css']
 })
 export class TicketListComponent implements OnInit {
-  public tickets: TicketModel[];
+  tickets$: Observable<TicketModel[]>;
 
   constructor(private _ticketService: TicketService,
               public userService: UserService) {
   }
 
   ngOnInit() {
-    // this.tickets = this._ticketService.getAllTickets();
-    console.log(this.tickets);
+    this.tickets$ = this._ticketService.getAllTickets();
   }
 }
