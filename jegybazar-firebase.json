@@ -148,7 +148,7 @@
       "name" : "Marcsa",
       "profilePictureUrl" : "https://i.pinimg.com/236x/2c/80/53/2c80536d805ca08bd1f87d9db9fb9955--funny-wallpapers-wallpaper-iphone.jpg"
     },
-    "aVfQaW8Z7FQS6bgBMBgOwwIwZ4u1" : {
+    "-Ky0D91XU3sLX9JHISVW" : {
       "address" : "namek",
       "dateOfBirth" : "2199-02-01",
       "email" : "mzx@mzx.hu",
@@ -156,6 +156,15 @@
       "id" : "-Ky0D91XU3sLX9JHISVW",
       "name" : "ifju satan",
       "profilePictureUrl" : "https://www.minihero.hu/wp-content/uploads/funko-pop-ifju-satan.jpg"
+    },
+    "mBUswvbahhRRDVfbfACIEgx3FKK2": {
+      "address" : "szeged",
+      "dateOfBirth" : "sdfasd",
+      "email" : "nagy.gergo@3pixel.hu",
+      "gender" : "male",
+      "id" : "mBUswvbahhRRDVfbfACIEgx3FKK2",
+      "name" : "Nagy Gergő",
+      "profilePictureUrl" : "https://cmeimg-a.akamaihd.net/640/clsd/getty/b96e82c973184dc8945a64a19e8e2e2e"
     }
   }
 }
