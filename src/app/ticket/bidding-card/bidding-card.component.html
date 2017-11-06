@@ -21,7 +21,7 @@
         <td>{{ticket.bidStep}} Ft</td>
       </tr>
       <tr>
-        <td colspan="2">Licit lejár <strong>X</strong> nap múlva</td>
+        <td colspan="2">Licit lejár <strong>{{ticket.bidEndDate | amFromUnix | amTimeAgo}}</strong></td>
       </tr>
       </tbody>
     </table>

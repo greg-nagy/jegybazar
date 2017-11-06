@@ -11,7 +11,7 @@
     </div>
     <div class="row">
       <div class="col-sm-12 col-md-2">Érvényesség:</div>
-      <div class="col-sm-12 col-md-10">{{ticket.bidEndDate}}</div>
+      <div class="col-sm-12 col-md-10">{{ticket.bidEndDate | amFromUnix | amDateFormat:'LLL'}}</div>
     </div>
     <div class="row">
       <div class="col-12"><p class="mt-2">{{ticket.details}}</p></div>

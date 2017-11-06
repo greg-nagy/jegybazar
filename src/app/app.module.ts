@@ -18,6 +18,7 @@ import { UserService } from './shared/user.service';
 import { TicketDetailsCardComponent } from './ticket/ticket-details-card/ticket-details-card.component';
 import { BiddingCardComponent } from './ticket/bidding-card/bidding-card.component';
 import { MomentModule } from 'angular2-moment';
+import 'moment/locale/hu';
 
 @NgModule({
   declarations: [
