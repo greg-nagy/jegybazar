@@ -15,6 +15,7 @@ import { EventService } from './shared/event.service';
 import { LoggedInGuardGuard } from './shared/logged-in-guard.guard';
 import { TicketService } from './shared/ticket.service';
 import { UserService } from './shared/user.service';
+import { TicketDetailsCardComponent } from './ticket/ticket-details-card/ticket-details-card.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { UserService } from './shared/user.service';
     JumbotronComponent,
     EventcardComponent,
     FooterComponent,
-    ...AppRoutingModule.routableComponents
+    ...AppRoutingModule.routableComponents,
+    TicketDetailsCardComponent
   ],
   imports: [
     BrowserModule,
