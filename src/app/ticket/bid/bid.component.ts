@@ -18,8 +18,4 @@ export class BidComponent implements OnInit {
       ticket => this.ticket = ticket
     );
   }
-
-  onBidWithBidStep() {
-    alert('Megnyomtak a gombot');
-  }
 }

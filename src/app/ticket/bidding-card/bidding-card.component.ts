@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { TicketModel } from '../../shared/ticket-model';
 
 @Component({
@@ -8,9 +8,8 @@ import { TicketModel } from '../../shared/ticket-model';
 })
 export class BiddingCardComponent {
   @Input() ticket: TicketModel;
-  @Output() bidWithBidStep = new EventEmitter<void>();
 
   onBidWithBidStep() {
-    this.bidWithBidStep.emit();
+    alert('Licitalas kovetkezo ertekkel');
   }
 }
