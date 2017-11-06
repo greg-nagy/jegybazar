@@ -17,37 +17,37 @@ import { ProfileComponent } from './user/profile/profile.component';
 
 
 const routes: Routes = [
-  {path: 'home', component: HomeComponent},
+  { path: 'home', component: HomeComponent },
   {
     path: 'event',
     component: EventComponent,
     children: [
-      {path: '', component: EventListComponent},
-      {path: 'new', component: EventDetailComponent, canActivate: [LoggedInGuardGuard]},
-      {path: ':id', component: EventDetailComponent}
+      { path: '', component: EventListComponent },
+      { path: 'new', component: EventDetailComponent, canActivate: [LoggedInGuardGuard] },
+      { path: ':id', component: EventDetailComponent }
     ]
   },
   {
     path: 'ticket',
     component: TicketComponent,
     children: [
-      {path: '', component: TicketListComponent},
-      {path: 'new', component: TicketDetailComponent, canActivate: [LoggedInGuardGuard]},
-      {path: ':id', component: BidComponent, canActivate: [LoggedInGuardGuard]},
+      { path: '', component: TicketListComponent },
+      { path: 'new', component: TicketDetailComponent, canActivate: [LoggedInGuardGuard] },
+      { path: ':id', component: BidComponent },
     ]
   },
-  {path: 'about', component: AboutComponent},
+  { path: 'about', component: AboutComponent },
   {
     path: 'user',
     children: [
-      {path: '', component: ProfileComponent, canActivate: [LoggedInGuardGuard]},
-      {path: 'edit', component: ProfileEditComponent, canActivate: [LoggedInGuardGuard]},
-      {path: 'login', component: LoginComponent},
-      {path: 'registration', component: ProfileEditComponent}
+      { path: '', component: ProfileComponent, canActivate: [LoggedInGuardGuard] },
+      { path: 'edit', component: ProfileEditComponent, canActivate: [LoggedInGuardGuard] },
+      { path: 'login', component: LoginComponent },
+      { path: 'registration', component: ProfileEditComponent }
     ]
   },
-  {path: '', redirectTo: '/home', pathMatch: 'full'},
-  {path: '**', component: PageNotFoundComponent}
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({
