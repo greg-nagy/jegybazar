@@ -16,6 +16,7 @@ import { LoggedInGuardGuard } from './shared/logged-in-guard.guard';
 import { TicketService } from './shared/ticket.service';
 import { UserService } from './shared/user.service';
 import { TicketDetailsCardComponent } from './ticket/ticket-details-card/ticket-details-card.component';
+import { BiddingCardComponent } from './ticket/bidding-card/bidding-card.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { TicketDetailsCardComponent } from './ticket/ticket-details-card/ticket-
     EventcardComponent,
     FooterComponent,
     ...AppRoutingModule.routableComponents,
-    TicketDetailsCardComponent
+    TicketDetailsCardComponent,
+    BiddingCardComponent
   ],
   imports: [
     BrowserModule,

@@ -6,41 +6,7 @@
     <div class="col-sm-12 col-md-8">
       <app-ticket-details-card [ticket]="ticket"></app-ticket-details-card>
 
-      <div class="card mt-2">
-        <div class="card-body">
-          <h4 class="card-title">Licit adatok</h4>
-
-          <table class="table table-responsive">
-            <tbody>
-            <tr>
-              <th scope="row">Minimum licit:</th>
-              <td>{{ticket.minimalBidPrice}} Ft</td>
-            </tr>
-            <tr>
-              <th scope="row">Jelenlegi licit:</th>
-              <td>3211 Ft TODO</td>
-            </tr>
-            <tr>
-              <th scope="row">Licitek száma:</th>
-              <td>33 db TODO</td>
-            </tr>
-            <tr>
-              <th scope="row">Licit lépcső:</th>
-              <td>{{ticket.bidStep}} Ft</td>
-            </tr>
-            <tr>
-              <td colspan="2">Licit lejár <strong>X</strong> nap múlva</td>
-            </tr>
-            </tbody>
-          </table>
-
-          <div class="row">
-            <div class="col-12">
-              <a class="btn btn-primary text-light ml-lg-2">Licit a lépcső szerint</a>
-            </div>
-          </div>
-        </div>
-      </div>
+      <app-bidding-card [ticket]="ticket"></app-bidding-card>
     </div>
   </ng-container>
 </div>
