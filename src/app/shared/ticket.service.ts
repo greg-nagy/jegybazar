@@ -5,6 +5,7 @@ import 'rxjs/add/observable/of';
 import 'rxjs/add/observable/zip';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/switchMap';
+import 'rxjs/add/observable/combineLatest';
 import { Observable } from 'rxjs/Observable';
 import { environment } from '../../environments/environment';
 import { EventModel } from './event-model';
@@ -12,13 +13,16 @@ import { EventService } from './event.service';
 import { TicketModel } from './ticket-model';
 import { UserModel } from './user-model';
 import { UserService } from './user.service';
+import 'rxjs/add/operator/mergeMap';
 
 @Injectable()
 export class TicketService {
 
-  constructor(private _eventService: EventService,
-              private _userService: UserService,
-              private _http: HttpClient) {
+  constructor(
+    private _eventService: EventService,
+    private _userService: UserService,
+    private _http: HttpClient
+  ) {
   }
 
   // Mi is tortenik itt, mert izi :) - logikai lepesekkel, hogy hogyan epulunk fel
@@ -79,10 +83,27 @@ export class TicketService {
       ;
   }
 
+  getOne(id: string): Observable<TicketModel> {
+    return this._http.get<TicketModel>(`${environment.firebase.baseUrl}/tickets/${id}.json`)
+      .flatMap(
+        ticket => Observable.combineLatest(
+          Observable.of(new TicketModel(ticket)),
+          this._eventService.getEventById(ticket.eventId),
+          this._userService.getUserById(ticket.sellerUserId),
+          (t: TicketModel, e: EventModel, u: UserModel) => {
+            return {
+              ...t,
+              event: e,
+              seller: u
+            };
+          })
+      );
+  }
+
   private _saveGeneratedId(ticketId: string): Observable<string> {
     return this._http.patch<{ id: string }>(
       `${environment.firebase.baseUrl}/tickets/${ticketId}.json`,
-      {id: ticketId}
+      { id: ticketId }
     )
       .map(x => x.id);
   }
