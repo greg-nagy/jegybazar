@@ -7,7 +7,7 @@
       <div class="col-sm-12 col-md-8">
         <app-ticket-details-card [ticket]="ticket"></app-ticket-details-card>
 
-        <app-bidding-card [ticket]="ticket"></app-bidding-card>
+        <app-bidding-card [isLoggedIn]="isLoggedIn" [ticket]="ticket"></app-bidding-card>
       </div>
     </ng-container>
   </div>

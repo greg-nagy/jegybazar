@@ -8,6 +8,7 @@ import { TicketModel } from '../../shared/ticket-model';
 })
 export class BiddingCardComponent {
   @Input() ticket: TicketModel;
+  @Input() isLoggedIn: Boolean;
 
   onBidWithBidStep() {
     alert('Licitalas kovetkezo ertekkel');
