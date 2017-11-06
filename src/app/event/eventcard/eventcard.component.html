@@ -1,11 +1,11 @@
 <div class="card">
-  <img class="card-img-top img-fluid" [src]="esemeny.pictureURL" alt="Card image cap">
+  <img *ngIf="esemeny?.pictureURL" class="card-img-top img-fluid" [src]="esemeny.pictureURL" alt="Card image cap">
   <div class="card-body">
     <h4 class="card-title"> {{esemeny.name}}</h4>
     <p class="card_text card-text">{{esemeny.description}}</p>
     <p class="card-text">
       <small class="text-muted">{{esemeny.date}}</small>
     </p>
-    <a [routerLink]="['./',esemeny.id]" class="row justify-content-end pr-4">Tovább</a>
+    <a [routerLink]="['./',esemeny.id]" class="row justify-content-end pr-4">{{nextLabel}}</a>
 </div>
 </div>
