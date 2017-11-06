@@ -1,8 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import 'rxjs/add/observable/forkJoin';
+import 'rxjs/add/observable/of';
 import 'rxjs/add/observable/zip';
-import 'rxjs/add/operator/mergeMap';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/switchMap';
 import { Observable } from 'rxjs/Observable';
 import { environment } from '../../environments/environment';
 import { EventModel } from './event-model';

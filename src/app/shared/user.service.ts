@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import 'rxjs/add/observable/of';
 import 'rxjs/add/operator/do';
+import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/switchMap';
 import { Observable } from 'rxjs/Observable';
 import { environment } from '../../environments/environment';
@@ -19,6 +20,10 @@ export class UserService {
 
   constructor(private _router: Router,
               private _http: HttpClient) {
+  }
+
+  get fbIdToken(): string | null {
+    return this._fbAuthData ? this._fbAuthData.idToken : null;
   }
 
   login(email: string, password: string): Observable<UserModel | void> {
@@ -66,12 +71,13 @@ export class UserService {
       .do(user => this._user = user);
   }
 
+  // itt ezt azert tettem be igy direktbe, es nem asyncronban bekotve, mert amikor ez a valtozo valtozik
+  // azt elintezik a kezelok (login, register, logout) es igy biztosra vehetem, hogy rendben van
+
   getUserById(fbid: string) {
     return this._http.get<UserModel>(`${environment.firebase.baseUrl}/users/${fbid}.json`);
   }
 
-  // itt ezt azert tettem be igy direktbe, es nem asyncronban bekotve, mert amikor ez a valtozo valtozik
-  // azt elintezik a kezelok (login, register, logout) es igy biztosra vehetem, hogy rendben van
   // TODO: ez iskolapeldaja lehet egyebkent egy jo kis behaviuorSubject-nek es getValue-nak
   getCurrentUser() {
     return this._user;
@@ -93,12 +99,11 @@ export class UserService {
   addTicket(ticketId: string): Observable<string> {
     return this._http.patch(
       `${environment.firebase.baseUrl}/users/${this._user.id}/tickets.json`,
-      { [ticketId]: true}
+      {[ticketId]: true}
     )
       .map(rel => Object.keys(rel)[0]);
   }
 
   // TODO: refreshtoken-t lekezelni
-  // TODO: auth query parameterre megirni az itnerceptort
   // TODO: rememberme-t lekezelni localstorage-el
 }
