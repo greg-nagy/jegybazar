@@ -9,6 +9,12 @@
   </div>
 </div>
 <ng-template #bidWithValue>
+  <alert type="success" dismissOnTimeout="5000" *ngIf="submitSuccessAlert">
+    Licitedet rögzítettük
+  </alert>
+  <alert type="danger" *ngIf="submitErrorAlert">
+    Valami hiba történt... Probáld meg újra vagy jelezd a support-nak!
+  </alert>
   <form [formGroup]="form" (ngSubmit)="onSubmit()">
     <div class="row">
       <div class="col-6">
