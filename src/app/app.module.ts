@@ -1,6 +1,6 @@
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { AlertModule, CollapseModule } from 'ngx-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
@@ -38,6 +38,7 @@ import { LoadingSpinnerComponent } from './core/loading-spinner/loading-spinner.
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     CollapseModule.forRoot(),
     AlertModule.forRoot(),
     AppRoutingModule,
