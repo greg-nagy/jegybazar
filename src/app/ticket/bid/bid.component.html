@@ -1,14 +1,19 @@
-<div class="container">
-  <div class="row">
-    <ng-container *ngIf="ticket">
-      <div class="col-sm order-md-2">
-        <app-eventcard [esemeny]="ticket.event" nextLabel="Esemény megtekintése"></app-eventcard>
-      </div>
-      <div class="col-sm-12 col-md-8">
-        <app-ticket-details-card [ticket]="ticket"></app-ticket-details-card>
+<ng-container *ngIf="ticket != null; else loading">
+  <div class="container">
+    <div class="row">
+      <ng-container *ngIf="ticket">
+        <div class="col-sm order-md-2">
+          <app-eventcard [esemeny]="ticket.event" nextLabel="Esemény megtekintése"></app-eventcard>
+        </div>
+        <div class="col-sm-12 col-md-8">
+          <app-ticket-details-card [ticket]="ticket"></app-ticket-details-card>
 
-        <app-bidding-card [isLoggedIn]="isLoggedIn" [ticket]="ticket"></app-bidding-card>
-      </div>
-    </ng-container>
+          <app-bidding-card [isLoggedIn]="isLoggedIn" [ticket]="ticket"></app-bidding-card>
+        </div>
+      </ng-container>
+    </div>
   </div>
-</div>
+</ng-container>
+<ng-template #loading>
+  <app-loading-spinner></app-loading-spinner>
+</ng-template>
