@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { TicketModel } from '../../shared/ticket-model';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { bidMinimumValidator } from './bid.validators';
@@ -9,19 +9,30 @@ import { BidService } from '../../shared/bid.service';
   templateUrl: './bid-form.component.html',
   styleUrls: ['./bid-form.component.css']
 })
-export class BidFormComponent implements OnInit {
+export class BidFormComponent implements OnInit, OnChanges {
   @Input() ticket: TicketModel;
-  @Output() bidWithBidStep = new EventEmitter<void>();
+  @Output() bid = new EventEmitter<void>();
   displayBidStep = true;
   form: FormGroup;
   submitted = false;
   submitSuccessAlert = false;
   submitErrorAlert = false;
+  disabled = false;
 
   constructor(
     private fb: FormBuilder,
     private bidService: BidService
   ) {}
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['ticket'] != null
+      && !changes['ticket'].isFirstChange()
+      && changes['ticket'].currentValue != null) {
+      this.disabled = false;
+      this.form.reset({ bid: null });
+      this.form.get('bid').enable();
+    }
+  }
 
   ngOnInit(): void {
     this.form = this.fb.group(
@@ -31,7 +42,7 @@ export class BidFormComponent implements OnInit {
           Validators.compose(
             [
               Validators.required,
-              bidMinimumValidator(this.ticket.currentBid + this.ticket.bidStep)
+              bidMinimumValidator(() => {return this.ticket; })
             ]
           )
         ]
@@ -40,7 +51,19 @@ export class BidFormComponent implements OnInit {
   }
 
   onBidWithBidStep() {
-    this.bidWithBidStep.emit();
+    this.toBid(this.ticket.currentBid + this.ticket.bidStep)
+      .subscribe(
+        () => {
+          // notification user
+          this.submitSuccessAlert = true;
+          this.bid.emit();
+          this.form.get('bid').enable();
+        },
+        err => {
+          console.error(err);
+          this.submitErrorAlert = true;
+        }
+      );
   }
 
   displayBidWithStep($event: Event) {
@@ -51,18 +74,15 @@ export class BidFormComponent implements OnInit {
 
   onSubmit() {
     this.submitted = true;
-    this.submitSuccessAlert = false;
-    this.submitErrorAlert = false;
 
     if (this.form.valid) {
-      this.bidService.bid(this.ticket.id, this.form.value['bid'])
+      this.toBid(this.form.value['bid'])
         .subscribe(
           () => {
             this.submitted = false;
-            this.form.reset({ bid: null });
             // notification user
             this.submitSuccessAlert = true;
-            // TODO emit output bid
+            this.bid.emit();
           },
           err => {
             console.error(err);
@@ -73,5 +93,14 @@ export class BidFormComponent implements OnInit {
     console.log('Licitaltak');
     console.log(this.form.value);
     console.log(this.form.valid);
+  }
+
+  toBid(value: number) {
+    this.submitSuccessAlert = false;
+    this.submitErrorAlert = false;
+    this.form.get('bid').disable();
+    this.disabled = true;
+
+    return this.bidService.bid(this.ticket.id, value);
   }
 }

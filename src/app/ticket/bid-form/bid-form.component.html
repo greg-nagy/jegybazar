@@ -1,20 +1,21 @@
+<alert type="success" dismissOnTimeout="5000" *ngIf="submitSuccessAlert">
+  Licitedet rögzítettük
+</alert>
+<alert type="danger" *ngIf="submitErrorAlert">
+  Valami hiba történt... Probáld meg újra vagy jelezd a support-nak!
+</alert>
 <div class="row" *ngIf="displayBidStep; else bidWithValue">
   <div class="col-12">
-    <a class="btn btn-primary text-light" (click)="onBidWithBidStep()">
+    <button [disabled]="disabled" class="btn btn-primary text-light" (click)="onBidWithBidStep()">
       Licit a következő legkisebb licittel: {{ticket.currentBid+ticket.bidStep}} Ft
-    </a>
+    </button>
   </div>
   <div class="col-12">
-    <a href="#" (click)="displayBidWithStep($event)">Inkább megadom én a licit értékét</a>
+    <a href="#" (click)="displayBidWithStep($event)" [ngClass]="{'disabled':disabled}">Inkább megadom én a licit
+      értékét</a>
   </div>
 </div>
 <ng-template #bidWithValue>
-  <alert type="success" dismissOnTimeout="5000" *ngIf="submitSuccessAlert">
-    Licitedet rögzítettük
-  </alert>
-  <alert type="danger" *ngIf="submitErrorAlert">
-    Valami hiba történt... Probáld meg újra vagy jelezd a support-nak!
-  </alert>
   <form [formGroup]="form" (ngSubmit)="onSubmit()">
     <div class="row">
       <div class="col-6">
@@ -33,7 +34,7 @@
         </div>
       </div>
       <div class="col-6">
-        <button type="submit" class="btn btn-primary text-light" role="button">Licitálok</button>
+        <button type="submit" class="btn btn-primary text-light" role="button" [disabled]="disabled">Licitálok</button>
       </div>
     </div>
   </form>

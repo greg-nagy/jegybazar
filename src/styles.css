@@ -55,3 +55,9 @@ footer {
     font-size:16px;
   }
 }
+
+/* disable anchor */
+a.disabled {
+  pointer-events: none;
+  cursor: default;
+}

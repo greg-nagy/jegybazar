@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { TicketModel } from '../../shared/ticket-model';
 
 @Component({
@@ -9,8 +9,9 @@ import { TicketModel } from '../../shared/ticket-model';
 export class BiddingCardComponent {
   @Input() ticket: TicketModel;
   @Input() isLoggedIn: Boolean;
+  @Output() refreshTicket = new EventEmitter<void>();
 
   onBidWithBidStep() {
-    alert('Licitalas kovetkezo ertekkel');
+    this.refreshTicket.emit();
   }
 }
