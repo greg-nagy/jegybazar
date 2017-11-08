@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { TicketModel } from '../../shared/ticket-model';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { bidMinimumValidator } from './bid.validators';
 
 @Component({
@@ -33,6 +33,10 @@ export class BidFormComponent implements OnInit {
         ]
       }
     );
+  }
+
+  testMethod() {
+    this.form.addControl('bid2', new FormControl());
   }
 
   onBidWithBidStep() {

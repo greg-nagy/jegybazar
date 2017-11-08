@@ -1,3 +1,4 @@
+<button (click)="testMethod()">TEST</button>
 <div class="row" *ngIf="displayBidStep; else bidWithValue">
   <div class="col-12">
     <a class="btn btn-primary text-light" (click)="onBidWithBidStep()">
@@ -10,6 +11,7 @@
 </div>
 <ng-template #bidWithValue>
   <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <input type="text" *ngIf="form.get('bid2')" formControlName="bid2">
     <div class="row">
       <div class="col-6">
         <input
