@@ -19,6 +19,12 @@
           class="form-control"
           placeholder="Add meg a licitértékedet"
         />
+        <div class="invalid-feedback" *ngIf="form.get('bid').hasError('required')">
+          Kötelező licit értéket megadni
+        </div>
+        <div class="invalid-feedback" *ngIf="form.get('bid').hasError('validateMinimumBid')">
+          Minimum lict amit tehetsz: {{ticket.currentBid+ticket.bidStep}} Ft.
+        </div>
       </div>
       <div class="col-6">
         <button type="submit" class="btn btn-primary text-light" role="button">Licitálok</button>
