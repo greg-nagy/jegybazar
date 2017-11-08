@@ -100,6 +100,11 @@ export class TicketService {
       );
   }
 
+  modify(ticket: TicketModel) {
+    return this._http
+      .put(`${environment.firebase.baseUrl}/tickets/${ticket.id}.json`, ticket);
+  }
+
   private _saveGeneratedId(ticketId: string): Observable<string> {
     return this._http.patch<{ id: string }>(
       `${environment.firebase.baseUrl}/tickets/${ticketId}.json`,
