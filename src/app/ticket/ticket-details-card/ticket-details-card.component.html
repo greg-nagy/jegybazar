@@ -1,6 +1,9 @@
 <div class="card">
   <div class="card-body">
-    <h4 class="card-title">Jegy adatai</h4>
+    <h4 class="card-title">Jegy adatai
+      <app-loading-spinner *ngIf="loading" class="float-right" [loaderWidth]="20"
+                           [loaderHeight]="20"></app-loading-spinner>
+    </h4>
     <div class="row">
       <div class="col-sm-12 col-md-3 label-row">Eladó neve:</div>
       <div class="col-sm-12 col-md-9">{{ticket.seller.name}}</div>

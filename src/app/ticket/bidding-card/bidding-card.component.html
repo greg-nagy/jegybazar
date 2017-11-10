@@ -1,6 +1,9 @@
 <div class="card mt-2">
   <div class="card-body">
-    <h4 class="card-title">Licit adatok</h4>
+    <h4 class="card-title">Licit adatok
+      <app-loading-spinner *ngIf="loading" class="float-right" [loaderWidth]="20"
+                           [loaderHeight]="20"></app-loading-spinner>
+    </h4>
 
     <table class="table table-responsive">
       <tbody>
