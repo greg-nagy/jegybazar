@@ -8,7 +8,7 @@
     </form>
   </div>
 
-  <div class="my-2 my-lg-0 text-center" *ngIf="userService.isLoggedIn$">
+  <div class="my-2 my-lg-0 text-center" *ngIf="userService.isLoggedIn$ | async">
     <div>
       <label>Eseményt szeretnék létrehozni</label>
     </div>

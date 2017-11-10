@@ -10,42 +10,46 @@
         </div>
       </div>
 
-      <div class="row justify-content-center bg-light m-0">
-        <img class="profil my-3 border" [src]="user.profilePictureUrl"
-             alt="Card image cap"></div>
-      <div class="card-body">
-        <table class="table table-responsive">
-          <tbody>
-          <tr>
-            <th scope="row">Név:</th>
-            <td>{{ user.name }}</td>
-          </tr>
-          <tr>
-            <th scope="row">Email-cím:</th>
-            <td>{{ user.email }}</td>
-          </tr>
-          <tr>
-            <th scope="row">Lakcím:</th>
-            <td>{{ user.address }}</td>
-          </tr>
-          <tr>
-            <th scope="row">Születési idő /év/hónap/nap:</th>
-            <td>{{ user.dateOfBirth }}</td>
-          </tr>
-          <tr>
-            <th scope="row">Nem:</th>
-            <td>{{ user.gender }}</td>
-          </tr>
-          </tbody>
-        </table>
-      </div>
+      <ng-container *ngIf="(user$ | async) as user;else loading">
+        <div class="row justify-content-center bg-light m-0">
+          <img class="profil my-3 border" [src]="user.profilePictureUrl"
+               alt="Card image cap"></div>
+        <div class="card-body">
+          <table class="table table-responsive">
+            <tbody>
+            <tr>
+              <th scope="row">Név:</th>
+              <td>{{ user.name }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Email-cím:</th>
+              <td>{{ user.email }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Lakcím:</th>
+              <td>{{ user.address }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Születési idő /év/hónap/nap:</th>
+              <td>{{ user.dateOfBirth }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Nem:</th>
+              <td>{{ user.gender }}</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
 
-      <div class="text-center mb-3">
-        <a routerLink="./edit" class="btn btn-primary text-light ml-lg-2">
-          Profilmódosítása
-        </a>
-      </div>
-
+        <div class="text-center mb-3">
+          <a routerLink="./edit" class="btn btn-primary text-light ml-lg-2">
+            Profilmódosítása
+          </a>
+        </div>
+      </ng-container>
+      <ng-template #loading>
+        <app-loading-spinner></app-loading-spinner>
+      </ng-template>
     </div>
   </div>
 </div>

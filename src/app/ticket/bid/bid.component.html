@@ -8,7 +8,7 @@
         <div class="col-sm-12 col-md-8">
           <app-ticket-details-card [loading]="progressRefreshTicket" [ticket]="ticket"></app-ticket-details-card>
 
-          <app-bidding-card [loading]="progressRefreshTicket" [isLoggedIn]="isLoggedIn" [ticket]="ticket"
+          <app-bidding-card [loading]="progressRefreshTicket" [isLoggedIn]="isLoggedIn$ | async" [ticket]="ticket"
                             (refreshTicket)="onRefreshTicket()"></app-bidding-card>
         </div>
       </ng-container>

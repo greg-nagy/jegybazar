@@ -14,12 +14,16 @@ export class ProfileEditComponent implements OnInit, OnDestroy {
 
   private _destroy$ = new Subject();
 
-  constructor(private _userService: UserService,
-              private _router: Router) {
+  constructor(
+    private _userService: UserService,
+    private _router: Router
+  ) {
   }
 
   ngOnInit() {
-    this.user = this._userService.getCurrentUser();
+    this._userService.getCurrentUser().subscribe(
+      user => this.user = user
+    );
   }
 
   // ezt a mintat kifejtettem az event-eknel

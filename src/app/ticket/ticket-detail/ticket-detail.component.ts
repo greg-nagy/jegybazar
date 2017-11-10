@@ -34,7 +34,9 @@ export class TicketDetailComponent implements OnInit, OnDestroy {
     // nem igazan szep, de tobbet most nem ert nekem a kerdes
     this.ticket.eventId = '';
 
-    this.ticket.sellerUserId = this._userService.getCurrentUser().id;
+    this._userService.getCurrentUser().subscribe(
+      user => this.ticket.sellerUserId = user.id
+    );
     this.events$ = this._eventService.getAllEvents();
   }
 
