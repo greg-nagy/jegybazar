@@ -15,6 +15,7 @@ import { UserModel } from './user-model';
 import { UserService } from './user.service';
 import 'rxjs/add/operator/mergeMap';
 import * as firebase from 'firebase';
+import 'rxjs/add/operator/first';
 
 @Injectable()
 export class TicketService {
@@ -82,6 +83,10 @@ export class TicketService {
       // keszitsuk kicsit elo a jovilagot es vezessuk a profilunknal a hozzank tartozo ticketeket
       .switchMap(ticketId => this._userService.addTicket(ticketId))
       ;
+  }
+
+  getOneOnce(id: string): Observable<TicketModel> {
+    return this.getOne(id).first();
   }
 
   getOne(id: string): Observable<TicketModel> {
