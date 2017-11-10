@@ -10,16 +10,29 @@ import { environment } from '../../environments/environment';
 import { FirebaseLoginModel } from './firebase-login-model';
 import { FirebaseRegistrationModel } from './firebase-registration-model';
 import { UserModel } from './user-model';
+import { ReplaySubject } from 'rxjs/ReplaySubject';
+import * as firebase from 'firebase';
 
 @Injectable()
 export class UserService {
-  isLoggedin = false;
+  isLoggedin = new ReplaySubject(1);
 
   private _user = new UserModel();
   private _fbAuthData: FirebaseLoginModel | FirebaseRegistrationModel | undefined;
 
-  constructor(private _router: Router,
-              private _http: HttpClient) {
+  constructor(
+    private _router: Router,
+    private _http: HttpClient
+  ) {
+    firebase.auth().onAuthStateChanged(
+      user => {
+        if (user != null) {
+          this.isLoggedin.next(true);
+        } else {
+          this.isLoggedin.next(false);
+        }
+      }
+    );
   }
 
   get fbIdToken(): string | null {
@@ -37,7 +50,6 @@ export class UserService {
       .do((fbAuthResponse: FirebaseLoginModel) => this._fbAuthData = fbAuthResponse)
       .switchMap(fbLogin => this.getUserById(fbLogin.localId))
       .do(user => this._user = user)
-      .do(user => this.isLoggedin = true)
       .do(user => console.log('sikeres login ezzel a userrel: ', user));
   }
 
@@ -58,7 +70,6 @@ export class UserService {
         };
       })
       .switchMap(user => this.save(user))
-      .do(user => this.isLoggedin = true)
       .do(user => console.log('sikeres reg ezzel a userrel: ', user));
   }
 
@@ -85,7 +96,6 @@ export class UserService {
 
   logout() {
     this._user = new UserModel();
-    this.isLoggedin = false;
     delete(this._fbAuthData);
     this._router.navigate(['/home']);
     console.log('kileptunk');
@@ -99,7 +109,7 @@ export class UserService {
   addTicket(ticketId: string): Observable<string> {
     return this._http.patch(
       `${environment.firebase.baseUrl}/users/${this._user.id}/tickets.json`,
-      {[ticketId]: true}
+      { [ticketId]: true }
     )
       .map(rel => Object.keys(rel)[0]);
   }
