@@ -8,13 +8,12 @@
     </button>
     <div class="collapse navbar-collapse" [collapse]="isCollapsed">
       <div class="navbar-nav ml-auto">
-        <a class="nav-item nav-link" routerLinkActive="active" routerLink="/home">Home</a>
-        <a class="nav-item nav-link" routerLinkActive="active" routerLink="/event">Események</a>
-        <a class="nav-item nav-link" routerLinkActive="active" routerLink="/ticket">Jegyek</a>
-        <a class="nav-item nav-link" routerLinkActive="active"
-           routerLink="/about">Rólunk</a>
-        <ng-container *ngIf="!(userService.isLoggedIn$ | async); else loggedInBlock">
-          <a class="nav-item nav-link" routerLinkActive="active" routerLink="/user/login">Belépés</a>
+        <app-nav-bar-item url="home" name="Home"></app-nav-bar-item>
+        <app-nav-bar-item url="event" name="Események"></app-nav-bar-item>
+        <app-nav-bar-item url="ticket" name="Jegyek"></app-nav-bar-item>
+        <app-nav-bar-item url="about" name="Rólunk"></app-nav-bar-item>
+        <ng-container *ngIf="!isLoggedIn; else loggedInBlock">
+          <app-nav-bar-item url="/user/login" name="Belépés"></app-nav-bar-item>
           <a class="nav-item nav-link btn btn-primary text-light ml-lg-2 btn-sm"
              routerLinkActive="active"
              routerLink="/user/registration"
