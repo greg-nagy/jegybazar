@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnDestroy, OnInit } from '@angular/core';
 import { TicketService } from '../../shared/ticket.service';
 import { TicketModel } from '../../shared/ticket-model';
 import { UserService } from '../../shared/user.service';
@@ -10,7 +10,8 @@ import { Subscription } from 'rxjs/Subscription';
 @Component({
   selector: 'app-bid',
   templateUrl: './bid.component.html',
-  styleUrls: ['./bid.component.css']
+  styleUrls: ['./bid.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BidComponent implements OnInit, OnDestroy {
   ticket$: Observable<TicketModel>;
