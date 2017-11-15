@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AboutComponent } from './about/about.component';
 import { PageNotFoundComponent } from './core/page-not-found/page-not-found.component';
 import { HomeComponent } from './home/home.component';
 import { LoggedInGuardGuard } from './shared/logged-in-guard.guard';
@@ -25,7 +24,7 @@ const routes: Routes = [
       { path: ':id', component: BidComponent },
     ]
   },
-  { path: 'about', component: AboutComponent },
+  { path: '', loadChildren: 'app/about/about.module#AboutModule' },
   {
     path: 'user',
     children: [
@@ -50,7 +49,6 @@ export class AppRoutingModule {
     TicketListComponent,
     TicketDetailComponent,
     BidComponent,
-    AboutComponent,
     LoginComponent,
     ProfileComponent,
     ProfileEditComponent,
