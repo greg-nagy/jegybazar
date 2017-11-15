@@ -1,4 +1,4 @@
-import { AfterViewChecked, ChangeDetectionStrategy, Component, DoCheck } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
   selector: 'app-jumbotron',
@@ -6,13 +6,15 @@ import { AfterViewChecked, ChangeDetectionStrategy, Component, DoCheck } from '@
   styleUrls: ['./jumbotron.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class JumbotronComponent implements DoCheck, AfterViewChecked {
+export class JumbotronComponent {}
 
-  ngDoCheck(): void {
-    console.log('JumbotronComponent ngDoCheck');
-  }
-
-  ngAfterViewChecked(): void {
-    console.log('JumbotronComponent ngAfterViewChecked');
-  }
-}
+// implements DoCheck, AfterViewChecked {
+//
+//   ngDoCheck(): void {
+//     console.log('JumbotronComponent ngDoCheck');
+//   }
+//
+//   ngAfterViewChecked(): void {
+//     console.log('JumbotronComponent ngAfterViewChecked');
+//   }
+// }

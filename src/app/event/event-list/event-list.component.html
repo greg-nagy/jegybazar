@@ -3,8 +3,7 @@
   <div class="col-auto text-center">
     <label>Keresés az események között</label>
     <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Esemény neve">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Keresés</button>
+      <input class="form-control mr-sm-2" type="search" placeholder="Esemény neve" #searchInput>
     </form>
   </div>
 
@@ -26,7 +25,7 @@
                  [esemeny]="ev"
   >
   </app-eventcard>
-</div>˚
+</div>
 
 <!--<div class="card-deck pt-5 pb-5" *ngFor="let evg of eventsGrouppedBy3">-->
   <!--<app-eventcard class="col col-md-6 col-lg-4"-->
