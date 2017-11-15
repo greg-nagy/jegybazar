@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { EventModel } from '../../shared/event-model';
 import { EventService } from '../../shared/event.service';
@@ -7,7 +7,8 @@ import { UserService } from '../../shared/user.service';
 @Component({
   selector: 'app-event-list',
   templateUrl: './event-list.component.html',
-  styleUrls: ['./event-list.component.css']
+  styleUrls: ['./event-list.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class EventListComponent implements OnInit {
 // ez jo pelda lehet smart es dumb componentre
@@ -16,8 +17,10 @@ export class EventListComponent implements OnInit {
   public events: EventModel[];
   public eventsGrouppedBy3$: Observable<EventModel[][]>;
 
-  constructor(private _eventService: EventService,
-              public userService: UserService) {
+  constructor(
+    private _eventService: EventService,
+    public userService: UserService
+  ) {
   }
 
   ngOnInit() {
