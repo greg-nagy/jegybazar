@@ -1,10 +1,19 @@
-import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  EventEmitter,
+  Input,
+  OnChanges,
+  Output,
+  SimpleChanges
+} from '@angular/core';
 import { TicketModel } from '../../shared/ticket-model';
 
 @Component({
   selector: 'app-bidding-card',
   templateUrl: './bidding-card.component.html',
-  styleUrls: ['./bidding-card.component.css']
+  styleUrls: ['./bidding-card.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BiddingCardComponent implements OnChanges {
   @Input() ticket: TicketModel;
