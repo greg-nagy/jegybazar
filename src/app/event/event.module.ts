@@ -8,6 +8,7 @@ import { EventDetailComponent } from './event-detail/event-detail.component';
 import { FormsModule } from '@angular/forms';
 import { AlertModule } from 'ngx-bootstrap';
 import { EventcardModule } from './eventcard/eventcard.module';
+import { CoreModule } from '../core/core.module';
 
 @NgModule({
   imports: [
@@ -16,7 +17,8 @@ import { EventcardModule } from './eventcard/eventcard.module';
     FormsModule,
 
     AlertModule,
-    EventcardModule
+    EventcardModule,
+    CoreModule
   ],
   declarations: [
     EventComponent,
