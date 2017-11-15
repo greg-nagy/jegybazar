@@ -24,7 +24,7 @@ const routes: Routes = [
       { path: ':id', component: BidComponent },
     ]
   },
-  { path: '', loadChildren: 'app/about/about.module#AboutModule' },
+  { path: 'about', loadChildren: 'app/about/about.module#AboutModule' },
   {
     path: 'user',
     children: [
