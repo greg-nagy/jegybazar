@@ -2,9 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './about/about.component';
 import { PageNotFoundComponent } from './core/page-not-found/page-not-found.component';
-import { EventDetailComponent } from './event/event-detail/event-detail.component';
-import { EventListComponent } from './event/event-list/event-list.component';
-import { EventComponent } from './event/event.component';
 import { HomeComponent } from './home/home.component';
 import { LoggedInGuardGuard } from './shared/logged-in-guard.guard';
 import { BidComponent } from './ticket/bid/bid.component';
@@ -18,15 +15,7 @@ import { ProfileComponent } from './user/profile/profile.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
-  {
-    path: 'event',
-    component: EventComponent,
-    children: [
-      { path: '', component: EventListComponent },
-      { path: 'new', component: EventDetailComponent, canActivate: [LoggedInGuardGuard] },
-      { path: ':id', component: EventDetailComponent }
-    ]
-  },
+  { path: 'event', loadChildren: 'app/event/event.module#EventModule' },
   {
     path: 'ticket',
     component: TicketComponent,
@@ -57,9 +46,6 @@ const routes: Routes = [
 export class AppRoutingModule {
   static routableComponents = [
     HomeComponent,
-    EventComponent,
-    EventListComponent,
-    EventDetailComponent,
     TicketComponent,
     TicketListComponent,
     TicketDetailComponent,
