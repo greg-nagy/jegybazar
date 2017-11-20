@@ -1,0 +1,29 @@
+:host {
+  display: list-item;
+}
+
+li {
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+  border-bottom: 1px dotted #B3A9A9;
+}
+
+li.left .chat-message {
+  margin-left: 60px;
+}
+
+.chat-message p {
+  margin: 0;
+  color: #777;
+}
+
+li img.user-image {
+  background-color: silver;
+
+  width: 48px;
+  height: 48px;
+}
+
+li img.user-image.placeholder-image {
+  padding: 8px;
+}

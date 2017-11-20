@@ -1,0 +1,17 @@
+<li class="left clearfix">
+            <span class="float-left">
+              <img *ngIf="msg.userPictureUrl;else placeholderImage" [src]="msg.userPictureUrl"
+                   alt="Felhasználó képe" class="user-image rounded-circle">
+              <ng-template #placeholderImage>
+                <img src="assets/chat_user_placeholder.svg" alt="Felhasználó képe"
+                     class="user-image rounded-circle placeholder-image">
+              </ng-template>
+            </span>
+  <div class="clearfix chat-message">
+    <div class="chat-message-header">
+      <strong>{{msg.userName}}</strong>
+      <small class="float-right text-muted">X idővel ezelőtt</small>
+    </div>
+    <p>{{msg.msg}}</p>
+  </div>
+</li>
