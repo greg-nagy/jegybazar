@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 import { Subscription } from 'rxjs/Subscription';
 import { EventModel } from '../../shared/event-model';
-import { EventService } from '../../shared/event.service';
+import { EventService } from '../../event/event.service';
 import { TicketModel } from '../../shared/ticket-model';
 import { TicketService } from '../../shared/ticket.service';
 import { UserService } from '../../shared/user.service';

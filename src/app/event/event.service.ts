@@ -4,7 +4,7 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/switchMap';
 import { Observable } from 'rxjs/Observable';
 import { environment } from '../../environments/environment';
-import { EventModel } from './event-model';
+import { EventModel } from '../shared/event-model';
 
 @Injectable()
 export class EventService {

@@ -1,7 +1,7 @@
 import { AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { EventModel } from '../../shared/event-model';
-import { EventService } from '../../shared/event.service';
+import { EventService } from '../event.service';
 import { UserService } from '../../shared/user.service';
 import 'rxjs/add/observable/fromEvent';
 import 'rxjs/add/operator/delay';
