@@ -8,6 +8,7 @@ import { ChatWindowComponent } from './chat-window/chat-window.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CoreModule } from '../core/core.module';
 import { ChatMessageRowComponent } from './chat-message-row/chat-message-row.component';
+import { ChatMessageSendFormComponent } from './chat-message-send-form/chat-message-send-form.component';
 
 export const chatServiceProvideFactoryFn =
   (userService: UserService) => {
@@ -24,7 +25,8 @@ export const chatServiceProvideFactoryFn =
   ],
   declarations: [
     ChatWindowComponent,
-    ChatMessageRowComponent
+    ChatMessageRowComponent,
+    ChatMessageSendFormComponent
   ],
   exports: [
     ChatWindowComponent
