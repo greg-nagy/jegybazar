@@ -6,6 +6,7 @@ import { MockedChatDatas } from '../mocked-chat.service';
 import { Observable } from 'rxjs/Observable';
 import { ChatMessageModel } from '../model/chat.model';
 import { ChatService } from '../chat.service';
+import 'rxjs/add/operator/distinctUntilChanged';
 
 @Component({
   selector: 'app-chat-window',
