@@ -26,12 +26,11 @@ export class ChatMessageSendFormComponent implements OnInit, OnChanges {
   @Input() reset = false;
   @Output() resetChange = new EventEmitter<boolean>();
 
-  constructor(
-    private fb: FormBuilder
-  ) { }
+  constructor(private fb: FormBuilder) { }
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (changes['reset'] != null && changes['reset'].isFirstChange() === false
+    if (changes['reset'] != null
+      && changes['reset'].isFirstChange() === false
       && changes['reset'].currentValue === true) {
       this.form.reset({ 'chat-message': null });
       this.chatMessageInput.nativeElement.focus();

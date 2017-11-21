@@ -6,6 +6,7 @@ import { UserService } from '../shared/user.service';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import 'rxjs/add/observable/of';
 import 'rxjs/add/operator/delay';
+import * as moment from 'moment';
 
 export const MockedChatDatas = {
   mockedRoomId: '-Ky0HolLJBH3Q5uVHWZf',
@@ -28,7 +29,8 @@ export class MockedChatService extends ChatService {
         msg: `Test messages: ${i}`,
         userId: MockedChatDatas.mockedUserId,
         userName: MockedChatDatas.mockedUserName,
-        userPictureUrl: MockedChatDatas.mockedUserPictureUrl
+        userPictureUrl: MockedChatDatas.mockedUserPictureUrl,
+        created: moment().unix()
       });
     }
 
@@ -49,9 +51,10 @@ export class MockedChatService extends ChatService {
             new ChatMessageModel({
               $id: null,
               'msg': msg,
-              userId: user.id,
-              userName: user.name,
-              userPictureUrl: user.profilePictureUrl
+              userId: MockedChatDatas.mockedUserId,
+              userName: MockedChatDatas.mockedUserName,
+              userPictureUrl: MockedChatDatas.mockedUserPictureUrl,
+              created: moment().unix()
             })
           );
           rooms[roomId].next(roomMessages);

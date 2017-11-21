@@ -14,8 +14,8 @@ import 'rxjs/add/operator/distinctUntilChanged';
 })
 export class ChatWindowComponent implements OnInit {
   @Input() roomId = environment.production ? null : MockedChatDatas.mockedRoomId;
-  chatMessage$: Observable<ChatMessageModel[]>;
   resetForm = false;
+  chatMessage$: Observable<ChatMessageModel[]>;
 
   constructor(
     private chatService: ChatService
