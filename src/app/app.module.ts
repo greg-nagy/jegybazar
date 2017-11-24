@@ -23,6 +23,7 @@ import { EventModule } from './event/event.module';
 import { ChatModule } from './chat/chat.module';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
     EventModule.forRoot(),
     ChatModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    AngularFireAuthModule
   ],
   providers: [
     UserService,
