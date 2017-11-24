@@ -12,7 +12,7 @@
       </div>
     </div>
   </div>
-  <app-chat-window *ngIf="isLoggedIn$ | async" [roomId]="ticket.id$"></app-chat-window>
+  <app-chat-window *ngIf="isLoggedIn$ | async" [roomId]="ticket.id"></app-chat-window>
 </ng-container>
 <ng-template #loading>
   <app-loading-spinner></app-loading-spinner>

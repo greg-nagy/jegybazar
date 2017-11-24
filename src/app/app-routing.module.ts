@@ -21,7 +21,7 @@ const routes: Routes = [
     children: [
       { path: '', component: TicketListComponent },
       { path: 'new', component: TicketDetailComponent, canActivate: [LoggedInGuardGuard] },
-      { path: ':$id', component: BidComponent },
+      { path: ':id', component: BidComponent },
     ]
   },
   { path: 'about', loadChildren: 'app/about/about.module#AboutModule' },
