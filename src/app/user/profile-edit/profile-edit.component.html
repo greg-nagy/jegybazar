@@ -4,8 +4,8 @@
     <div class="card" *ngIf="user != null || registerMode == true;else loading">
       <div class="card-header">
         <div class="bg-light text-center">
-          <h3 *ngIf="user.id">Profil módosítása</h3>
-          <h3 *ngIf="!user.id">Regisztráció</h3>
+          <h3 *ngIf="user.id$">Profil módosítása</h3>
+          <h3 *ngIf="!user.id$">Regisztráció</h3>
         </div>
       </div>
 
@@ -108,7 +108,7 @@
             </alert>
           </div>
 
-          <ng-container *ngIf="!user.id">
+          <ng-container *ngIf="!user.id$">
 
             <div class="form-group">
               <label for="registerPassword">Jelszó</label>
@@ -149,7 +149,7 @@
             </div>
           </ng-container>
 
-          <div class="text-center mb-3" *ngIf="user.id">
+          <div class="text-center mb-3" *ngIf="user.id$">
             <button type="submit" class="btn btn-primary btn-lg"
                     [disabled]="profileForm.invalid"
             > Mentés
