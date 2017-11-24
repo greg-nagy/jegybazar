@@ -8,8 +8,6 @@ import {
   ViewChild
 } from '@angular/core';
 import 'rxjs/add/operator/skip';
-import { environment } from '../../../environments/environment';
-import { MockedChatDatas } from '../mocked-chat.service';
 import { Observable } from 'rxjs/Observable';
 import { ChatMessageModel } from '../model/chat.model';
 import { ChatService } from '../chat.service';
@@ -19,10 +17,11 @@ import 'rxjs/add/operator/distinctUntilChanged';
   selector: 'app-chat-window',
   templateUrl: './chat-window.component.html',
   styleUrls: ['./chat-window.component.css'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  providers: [ChatService]
 })
 export class ChatWindowComponent implements OnInit, AfterViewChecked {
-  @Input() roomId = environment.production ? null : MockedChatDatas.mockedRoomId;
+  @Input() roomId; // = environment.production ? null : MockedChatDatas.mockedRoomId;
   resetForm = false;
   chatMessage$: Observable<ChatMessageModel[]>;
   @ViewChild('cardBody') cardBody: ElementRef;

@@ -1,4 +1,4 @@
-import { ModuleWithProviders, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ChatService } from './chat.service';
 import { MockedChatService } from './mocked-chat.service';
@@ -35,16 +35,4 @@ export const chatServiceProvideFactoryFn =
   ]
 })
 export class ChatModule {
-  static forRoot(): ModuleWithProviders {
-    return {
-      ngModule: ChatModule,
-      providers: [
-        {
-          provide: ChatService,
-          useFactory: chatServiceProvideFactoryFn,
-          deps: [UserService]
-        }
-      ]
-    };
-  }
 }
