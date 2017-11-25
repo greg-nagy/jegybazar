@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { TicketModel } from '../../shared/ticket-model';
 import { TicketService } from '../../shared/ticket.service';
@@ -7,22 +7,34 @@ import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import 'rxjs/add/operator/distinctUntilChanged';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/mergeMap';
+import { Subscription } from 'rxjs/Subscription';
 
 @Component({
   selector: 'app-ticket-list',
   templateUrl: './ticket-list.component.html',
-  styleUrls: ['./ticket-list.component.css'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  styleUrls: ['./ticket-list.component.css']
 })
-export class TicketListComponent implements OnInit, AfterViewInit {
-  tickets$: Observable<TicketModel[]>;
+export class TicketListComponent implements OnInit, OnDestroy, AfterViewInit {
+  tickets: TicketModel[];
+  isLoggedIn: boolean;
   @ViewChild('searchInput') searchInput: ElementRef;
   private filteredText$ = new BehaviorSubject<string>(null);
+  private ticketsSubscription: Subscription;
+  private isLoggedInSubcription: Subscription;
 
   constructor(
     private _ticketService: TicketService,
-    public userService: UserService
+    private cdr: ChangeDetectorRef,
+    userService: UserService
   ) {
+    this.isLoggedInSubcription = userService.isLoggedIn$.subscribe(
+      isLoggedIn => this.isLoggedIn = isLoggedIn
+    );
+  }
+
+  ngOnDestroy(): void {
+    this.ticketsSubscription.unsubscribe();
+    this.isLoggedInSubcription.unsubscribe();
   }
 
   ngAfterViewInit(): void {
@@ -39,10 +51,12 @@ export class TicketListComponent implements OnInit, AfterViewInit {
           this.filteredText$.next(text);
         }
       );
+
+    this.cdr.detach();
   }
 
   ngOnInit() {
-    this.tickets$ = this._ticketService.getAllTickets()
+    this.ticketsSubscription = this._ticketService.getAllTickets()
       .flatMap(
         tickets => {
           return this.filteredText$.map(
@@ -58,6 +72,12 @@ export class TicketListComponent implements OnInit, AfterViewInit {
               }
             }
           );
+        }
+      )
+      .subscribe(
+        tickets => {
+          this.tickets = tickets;
+          this.cdr.detectChanges();
         }
       );
   }
