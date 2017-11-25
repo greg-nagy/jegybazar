@@ -26,7 +26,7 @@ export class TicketService {
   ) {
   }
 
-  getAllTickets() {
+  getAllTickets(): Observable<TicketModel[]> {
     return this.afDb.list('tickets')
       .map(ticketsArray => ticketsArray.map(ticket =>
         Observable.zip(
