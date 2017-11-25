@@ -20,6 +20,10 @@
       "prefix": "app",
       "styles": [
         "../node_modules/bootstrap/dist/css/bootstrap.min.css",
+        {
+          "input": "../node_modules/font-awesome/css/font-awesome.css",
+          "lazy": false
+        },
         "styles.css"
       ],
       "scripts": [],

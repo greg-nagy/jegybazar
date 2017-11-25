@@ -2,7 +2,7 @@
   display: block;
   width: 100%;
   max-width: 500px;
-  height: 100%;
+  /*height: 100%;*/
   max-height: 450px;
 
   position: fixed;
@@ -19,7 +19,6 @@
 
 .card > .card-body {
   overflow-y: auto;
-  height: calc(450px - 49px - 49px);
   padding: 15px;
 }
 
@@ -27,4 +26,10 @@
   list-style: none;
   margin: 0;
   padding: 0;
+  height: calc(450px - 49px - 49px);
+}
+
+.card-header {
+  font-size: 1.6em;
+  font-weight: bold;
 }
