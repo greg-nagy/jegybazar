@@ -17,8 +17,22 @@ export class ChatComponent {
   windows$ = new BehaviorSubject<ChatWindowConfig[]>([]);
 
   constructor(
-    private userService: UserService
-  ) { }
+    private userService: UserService,
+    private chatService: ChatService
+  ) {
+    this.chatService.getChatCallWatcher().subscribe(
+      data => {
+        if (data != null && data.length > 0) {
+          data.forEach(
+            call => {
+              this.openChat({ title: call.friend.name, roomId: call.roomId, friend: call.friend });
+              this.chatService.removeWatcher(call.friend.$id);
+            }
+          );
+        }
+      }
+    );
+  }
 
   openChat(config: ChatWindowConfig) {
     const windows = this.windows$.getValue();
@@ -52,10 +66,12 @@ export class ChatComponent {
     this.userService.getCurrentUser().first()
       .subscribe(
         user => {
+          const roomId = `${user.id}-${friend.$id}`;
           this.openChat({
-            title: friend.name, roomId: `${user.id}-${friend.$id}`,
+            title: friend.name, roomId: roomId,
             closeable: true, 'friend': friend
           });
+          this.chatService.addChatWait(roomId, friend);
         }
       );
   }

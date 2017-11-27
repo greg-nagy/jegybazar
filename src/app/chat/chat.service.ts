@@ -8,6 +8,7 @@ import * as moment from 'moment';
 import 'rxjs/add/operator/map';
 import { ChatFriendModel } from './model/chat-friend.model';
 import 'rxjs/add/operator/first';
+import { ChatCallModel } from "./model/chat-call.model";
 
 @Injectable()
 export class ChatService {
@@ -76,5 +77,49 @@ export class ChatService {
             );
         }
       );
+  }
+
+  addChatWait(roomId: string, friend: ChatFriendModel) {
+    this.userService.getCurrentUser().first()
+      .subscribe(
+        user => {
+          this.afDb.object(`chat_wait/${friend.$id}/${user.id}`)
+            .set({
+              'roomId': roomId,
+              'friend': new ChatFriendModel({
+                $id: user.id,
+                name: user.name, profilePictureUrl: user.profilePictureUrl
+              })
+            });
+        }
+      );
+  }
+
+  getChatCallWatcher(): Observable<ChatCallModel[]> {
+    return this.userService.getCurrentUser().first()
+      .switchMap(user => {
+        return this.afDb.list(`chat_wait/${user.id}`)
+          .map(
+            calls =>
+              calls.map(
+                call =>
+                  new ChatCallModel(Object.assign(
+                    call,
+                    {
+                      $id: call.$key, friend: new ChatFriendModel(Object.assign(call.friend, { $id: call.$key }))
+                    }
+                  ))
+              )
+          );
+      });
+  }
+
+  removeWatcher(id: string) {
+    this.userService.getCurrentUser()
+      .first().delay(1000).subscribe(
+      user => {
+        this.afDb.object(`chat_wait/${user.id}/${id}`).remove().then();
+      }
+    )
   }
 }
