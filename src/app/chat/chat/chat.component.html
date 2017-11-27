@@ -1,0 +1,7 @@
+<app-chat-window
+  *ngFor="let config of windows$ |async"
+  [id]="config.id"
+  [roomId]="config.roomId"
+  [title]="config.title"
+  [closeable]="config.closeable"
+></app-chat-window>

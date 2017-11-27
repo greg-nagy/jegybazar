@@ -9,7 +9,7 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class ChatService {
-  private static PATH = 'chat/ticket_room';
+  private static PATH = 'chat';
 
   constructor(
     protected userService: UserService,
