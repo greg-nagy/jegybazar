@@ -15,6 +15,7 @@
 
 :host > .card {
   height: 100%;
+  max-height: 450px;
 }
 
 .card > .card-body {
