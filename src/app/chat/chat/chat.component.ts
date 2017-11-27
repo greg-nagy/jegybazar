@@ -40,6 +40,8 @@ export class ChatComponent {
     const windows = this.windows$.getValue();
     if (windows.find(_config => _config.roomId === `friend_list/${config.roomId}`)
       == null) {
+      this.chatService.addChatWait(config.roomId, config.friend);
+
       if (config.id === null) {
         // default
         config.id = `${config.roomId}${new Date().getTime()}`;
@@ -86,8 +88,6 @@ export class ChatComponent {
                 }
               }
             );
-
-          this.chatService.addChatWait(roomId, friend);
         }
       );
   }
