@@ -4,9 +4,9 @@
   </div>
   <div class="card-body">
     <ng-container *ngIf="friendList$ | async as friendList;else loading">
-      <ng-container *ngFor="let friend of friendList">
-        <app-chat-friend-row [friend]="friend"></app-chat-friend-row>
-      </ng-container>
+      <ul class="friend-list">
+        <app-chat-friend-row *ngFor="let friend of friendList" [friend]="friend"></app-chat-friend-row>
+      </ul>
     </ng-container>
     <ng-template #loading>
       <app-loading-spinner [loaderWidth]="100" [loaderHeight]="100"></app-loading-spinner>
