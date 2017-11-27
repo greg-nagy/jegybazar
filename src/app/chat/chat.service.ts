@@ -71,7 +71,7 @@ export class ChatService {
             .map(
               friends =>
                 friends.map(
-                  friend => new ChatFriendModel({ $id: friend.$key })
+                  friend => new ChatFriendModel(Object.assign(friend, { $id: friend.$key }))
                 )
             );
         }

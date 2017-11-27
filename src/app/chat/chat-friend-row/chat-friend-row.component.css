@@ -1,0 +1,19 @@
+:host {
+  display: list-item;
+  width: 100%;
+
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+  border-bottom: 1px dotted #B3A9A9;
+}
+
+.user-image {
+  width: 48px;
+  height: 48px;
+  background-color: transparent;
+}
+
+strong {
+  margin-left: 60px;
+  display: block;
+}
