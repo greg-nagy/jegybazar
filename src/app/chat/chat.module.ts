@@ -35,7 +35,6 @@ export const chatServiceProvideFactoryFn =
     ChatFriendListComponent
   ],
   exports: [
-    ChatWindowComponent,
     ChatComponent
   ]
 })

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ChatFriendModel } from '../model/chat-friend.model';
+import { Observable } from 'rxjs/Observable';
+import { ChatService } from '../chat.service';
 
 @Component({
   selector: 'app-chat-friend-list',
@@ -6,10 +9,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./chat-friend-list.component.css']
 })
 export class ChatFriendListComponent implements OnInit {
+  friendList$: Observable<ChatFriendModel[]>;
 
-  constructor() { }
+  constructor(
+    private chatService: ChatService
+  ) { }
 
   ngOnInit() {
+    this.friendList$ = this.chatService.getMyFriendList();
   }
 
 }
