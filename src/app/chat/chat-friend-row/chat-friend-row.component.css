@@ -2,10 +2,14 @@
   display: list-item;
   width: 100%;
 
-  margin-bottom: 10px;
   border-bottom: 1px dotted #B3A9A9;
 
-  padding: 8px;
+  padding: 1em;
+  cursor: pointer !important;
+}
+
+:host(.focused) {
+  background-color: RGBA(192, 192, 192, 0.5);
 }
 
 .user-image {
