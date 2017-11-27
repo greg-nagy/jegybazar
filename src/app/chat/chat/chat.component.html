@@ -1,7 +1,11 @@
-<app-chat-window
-  *ngFor="let config of windows$ |async"
-  [id]="config.id"
-  [roomId]="config.roomId"
-  [title]="config.title"
-  [closeable]="config.closeable"
-></app-chat-window>
+<div class="row">
+  <app-chat-window
+    *ngFor="let config of windows$ |async"
+    [id]="config.id"
+    [roomId]="config.roomId"
+    [title]="config.title"
+    [closeable]="config.closeable"
+    [floating]="false"
+    class="col col-3 align-self-end"
+  ></app-chat-window>
+</div>

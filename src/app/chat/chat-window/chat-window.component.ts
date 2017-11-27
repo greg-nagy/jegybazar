@@ -32,6 +32,7 @@ export class ChatWindowComponent implements OnInit, AfterViewChecked {
   @Input() title: string;
   @Input() closeable = false;
   @Output() close = new EventEmitter<void>();
+  @Input() @HostBinding('class.floating') floating = true;
 
   resetForm = false;
   chatMessage$: Observable<ChatMessageModel[]>;
