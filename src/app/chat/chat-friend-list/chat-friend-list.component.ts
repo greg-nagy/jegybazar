@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { ChatFriendModel } from '../model/chat-friend.model';
 import { Observable } from 'rxjs/Observable';
 import { ChatService } from '../chat.service';
@@ -10,6 +10,7 @@ import { ChatService } from '../chat.service';
 })
 export class ChatFriendListComponent implements OnInit {
   friendList$: Observable<ChatFriendModel[]>;
+  @Output() select = new EventEmitter<ChatFriendModel>();
 
   constructor(
     private chatService: ChatService
@@ -19,4 +20,7 @@ export class ChatFriendListComponent implements OnInit {
     this.friendList$ = this.chatService.getMyFriendList();
   }
 
+  onSelectFriend(friend: ChatFriendModel) {
+    this.select.emit(friend);
+  }
 }

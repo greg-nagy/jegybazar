@@ -5,7 +5,10 @@
   <div class="card-body">
     <ng-container *ngIf="friendList$ | async as friendList;else loading">
       <ul class="friend-list">
-        <app-chat-friend-row *ngFor="let friend of friendList" [friend]="friend"></app-chat-friend-row>
+        <app-chat-friend-row *ngFor="let friend of friendList"
+                             [friend]="friend"
+                             (select)="onSelectFriend($event)"
+        ></app-chat-friend-row>
       </ul>
     </ng-container>
     <ng-template #loading>

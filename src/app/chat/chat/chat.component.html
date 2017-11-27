@@ -11,5 +11,6 @@
   ></app-chat-window>
   <app-chat-friend-list
     class="col-sm col-md-2 align-self-end ml-auto"
+    (select)="onSelectFriend($event)"
   ></app-chat-friend-list>
 </div>

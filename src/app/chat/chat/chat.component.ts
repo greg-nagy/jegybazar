@@ -1,7 +1,10 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { ChatWindowConfig } from '../model/chat-window.config';
 import { ChatService } from '../chat.service';
+import { ChatFriendModel } from '../model/chat-friend.model';
+import { UserService } from '../../shared/user.service';
+import 'rxjs/add/operator/first';
 
 @Component({
   selector: 'app-chat',
@@ -10,29 +13,30 @@ import { ChatService } from '../chat.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
   providers: [ChatService]
 })
-export class ChatComponent implements OnInit {
+export class ChatComponent {
   windows$ = new BehaviorSubject<ChatWindowConfig[]>([]);
 
-  constructor() { }
-
-  ngOnInit() {
-    this.openChat({ title: 'test ablak', roomId: 'testelo' });
-    this.openChat({ title: 'test ablak', roomId: 'testelo2' });
-  }
+  constructor(
+    private userService: UserService
+  ) { }
 
   openChat(config: ChatWindowConfig) {
-    if (config.id === null) {
-      // default
-      config.id = `${config.roomId}${new Date().getTime()}`;
-    }
-    if (config.closeable == null) {
-      // default
-      config.closeable = true;
-    }
-    config.roomId = `friend_list/${config.roomId}`;
     const windows = this.windows$.getValue();
-    windows.push(config);
-    this.windows$.next(windows);
+    if (windows.find(_config => _config.roomId === `friend_list/${config.roomId}`)
+      == null) {
+      if (config.id === null) {
+        // default
+        config.id = `${config.roomId}${new Date().getTime()}`;
+      }
+      if (config.closeable == null) {
+        // default
+        config.closeable = true;
+      }
+      config.roomId = `friend_list/${config.roomId}`;
+
+      windows.push(config);
+      this.windows$.next(windows);
+    }
   }
 
   removeChat(id: string) {
@@ -42,5 +46,17 @@ export class ChatComponent implements OnInit {
       windows.splice(configIndex, 1);
       this.windows$.next(windows);
     }
+  }
+
+  onSelectFriend(friend: ChatFriendModel) {
+    this.userService.getCurrentUser().first()
+      .subscribe(
+        user => {
+          this.openChat({
+            title: friend.name, roomId: `${user.id}-${friend.$id}`,
+            closeable: true, 'friend': friend
+          });
+        }
+      );
   }
 }
