@@ -5,6 +5,7 @@ import { ChatService } from '../chat.service';
 import { ChatFriendModel } from '../model/chat-friend.model';
 import { UserService } from '../../shared/user.service';
 import 'rxjs/add/operator/first';
+import { AngularFireDatabase } from 'angularfire2/database';
 
 @Component({
   selector: 'app-chat',
@@ -18,7 +19,8 @@ export class ChatComponent {
 
   constructor(
     private userService: UserService,
-    private chatService: ChatService
+    private chatService: ChatService,
+    private afDb: AngularFireDatabase
   ) {
     this.chatService.getChatCallWatcher().subscribe(
       data => {
@@ -66,11 +68,25 @@ export class ChatComponent {
     this.userService.getCurrentUser().first()
       .subscribe(
         user => {
-          const roomId = `${user.id}-${friend.$id}`;
-          this.openChat({
-            title: friend.name, roomId: roomId,
-            closeable: true, 'friend': friend
-          });
+          let roomId = `${user.id}-${friend.$id}`;
+          this.afDb.object(`chat/friend_list/${roomId}`)
+            .subscribe(
+              room => {
+                if (room.$exists()) {
+                  this.openChat({
+                    title: friend.name, roomId: roomId,
+                    closeable: true, 'friend': friend
+                  });
+                } else {
+                  roomId = `${friend.$id}-${user.id}`;
+                  this.openChat({
+                    title: friend.name, roomId: roomId,
+                    closeable: true, 'friend': friend
+                  });
+                }
+              }
+            );
+
           this.chatService.addChatWait(roomId, friend);
         }
       );
