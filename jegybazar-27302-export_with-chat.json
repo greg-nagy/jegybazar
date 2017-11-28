@@ -1,0 +1,340 @@
+{
+  "chat_friend_list": {
+    "JiTAcanz6WZtTKIHUrgWgwOjiac2": {
+      "mBUswvbahhRRDVfbfACIEgx3FKK2": {
+        "lastOnline": 1511868942,
+        "name": "Nagy Gergő",
+        "online": false,
+        "profilePictureUrl": "https://cmeimg-a.akamaihd.net/640/clsd/getty/b96e82c973184dc8945a64a19e8e2e2e"
+      }
+    },
+    "mBUswvbahhRRDVfbfACIEgx3FKK2": {
+      "JiTAcanz6WZtTKIHUrgWgwOjiac2": {
+        "lastOnline": 1511868707,
+        "name": "eggp",
+        "online": false,
+        "profilePictureUrl": "https://ladysmithgazette.co.za/wp-content/uploads/sites/64/2014/08/baby-chick-and-an-egg.jpg"
+      }
+    }
+  },
+  "events": {
+    "-Ky0E6CbE8qAxNntn8bj": {
+      "date": "2018-01-03 13:00",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo.",
+      "id": "-Ky0E6CbE8qAxNntn8bj",
+      "name": "Téli Sziget Fesztivál",
+      "pictureURL": "http://www.fortitudemagazine.co.uk/wp-content/uploads/2017/04/sziget_og_image.jpg",
+      "tickets": {
+        "-Ky0HolLJBH3Q5uVHWZf": true,
+        "-Ky0Hz4uP2Es-j9q_Cmw": true,
+        "-Ky0I4C7RzhYJGKP_PAH": true,
+        "-Ky0IZDTNtGAjytLjtoM": true
+      }
+    },
+    "-Ky0EDGGrXHMYdns10L_": {
+      "date": "2017-11-23 21:00",
+      "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
+      "id": "-Ky0EDGGrXHMYdns10L_",
+      "name": "Diótörő Balett",
+      "pictureURL": "http://www.e-jegyiroda.hu/img/diotoro-jegyek-budapest-szeged-kecskemet-balett-mese-babjatek.jpg",
+      "tickets": {
+        "-Ky0Ik33L4iyTllI2kFe": true,
+        "-Ky0Iqc3wHhZjgnkC9n0": true,
+        "-KyD3zWEtC90890iewMj": true,
+        "-KyD7bJu42h0DVnPg06h": true
+      }
+    },
+    "-Ky0EKWDcRlYVCoRxwUy": {
+      "date": "2018-02-11 22:00",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, necessitatibus.",
+      "id": "-Ky0EKWDcRlYVCoRxwUy",
+      "name": "Macskák Musical",
+      "pictureURL": "https://pb2.jegy.hu/imgs/system-4/program/000/016/918/macskak-original-54100.jpg",
+      "tickets": {
+        "-KyD7wfWH_YkhGdXMrT_": true,
+        "-KyDIKpiipsNbURqp7I1": true,
+        "-KyDIlIXLvabUclJ5UFe": true,
+        "-KyDKCS3MAEwOK3pLIkQ": true
+      }
+    },
+    "-Ky0EOBRvrSTeR2dw1zZ": {
+      "date": "2017-08-03",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo.",
+      "id": "-Ky0EOBRvrSTeR2dw1zZ",
+      "name": "Fezen",
+      "pictureURL": "http://www.kate.hu/wp-content/uploads/2015/07/135599150312020929_fezen_2015_datummal.jpg"
+    },
+    "-Ky0EgjgM-yrJfRAa3Dr": {
+      "date": "2017-11-23",
+      "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
+      "id": "-Ky0EgjgM-yrJfRAa3Dr",
+      "name": "SZIN",
+      "pictureURL": "https://www.koncert.hu/uploads/concerts/koncert-20140625-11470-szin_2014_2.jpg"
+    },
+    "-Ky0EmBImsuc6RPV0BIH": {
+      "date": "2018-02-11",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, necessitatibus.",
+      "id": "-Ky0EmBImsuc6RPV0BIH",
+      "name": "Rockmaraton",
+      "pictureURL": "http://www.rockmaraton.hu/media/images/rockmaraton-2018-jegyvasarlas.jpg"
+    },
+    "-Ky0Euc2W2JkH-N8qw5z": {
+      "date": "2017-08-03",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo.",
+      "id": "-Ky0Euc2W2JkH-N8qw5z",
+      "name": "Black Hat USA",
+      "pictureURL": "https://www.blackhat.com/images/page-graphics/metatag/event-logo-us17.png"
+    },
+    "-Ky0F3kr0eHrm5T8HgVP": {
+      "date": "2017-11-23",
+      "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
+      "id": "-Ky0F3kr0eHrm5T8HgVP",
+      "name": "TEDx",
+      "pictureURL": "https://i0.wp.com/www.tedxwellington.com/wp-content/uploads/2017/02/tedx-bulb.jpg"
+    },
+    "-Ky0FG-p593HsAFNPF_-": {
+      "date": "2018-02-11",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, necessitatibus.",
+      "id": "-Ky0FG-p593HsAFNPF_-",
+      "name": "ng-conf",
+      "pictureURL": "https://cdn-images-1.medium.com/max/1270/1*2j7MOWb0s5pZpQLu7d-5CQ.png"
+    }
+  },
+  "tickets": {
+    "-Ky0HolLJBH3Q5uVHWZf": {
+      "bidCounter": 33,
+      "bidEndDate": 1514980800,
+      "bidStep": 500,
+      "currentBid": 3000,
+      "details": "Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... ",
+      "eventId": "-Ky0EOBRvrSTeR2dw1zZ",
+      "id": "-Ky0HolLJBH3Q5uVHWZf",
+      "minimalBidPrice": 2000,
+      "numberOfTickets": 5,
+      "sellerUserId": "-Ky0CVPDvbJmmeyAggMr"
+    },
+    "-Ky0Hz4uP2Es-j9q_Cmw": {
+      "bidCounter": 33,
+      "bidEndDate": 1514980800,
+      "bidStep": 1000,
+      "currentBid": 3000,
+      "details": "Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... ",
+      "eventId": "-Ky0E6CbE8qAxNntn8bj",
+      "id": "-Ky0Hz4uP2Es-j9q_Cmw",
+      "minimalBidPrice": 4000,
+      "numberOfTickets": 4,
+      "sellerUserId": "-Ky0CctiCtXXqcrDxJw9"
+    },
+    "-Ky0I4C7RzhYJGKP_PAH": {
+      "bidCounter": 33,
+      "bidEndDate": 1514980800,
+      "bidStep": 2000,
+      "currentBid": 3000,
+      "details": "Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... ",
+      "eventId": "-Ky0EDGGrXHMYdns10L_",
+      "id": "-Ky0I4C7RzhYJGKP_PAH",
+      "minimalBidPrice": 5000,
+      "numberOfTickets": 7,
+      "sellerUserId": "-Ky0CqiDVsXAbshfMZ6H"
+    },
+    "-Ky0IZDTNtGAjytLjtoM": {
+      "bidCounter": 33,
+      "bidEndDate": 1514980800,
+      "bidStep": 1000,
+      "currentBid": 3000,
+      "details": "Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... ",
+      "eventId": "-Ky0EgjgM-yrJfRAa3Dr",
+      "id": "-Ky0IZDTNtGAjytLjtoM",
+      "minimalBidPrice": 10000,
+      "numberOfTickets": 5,
+      "sellerUserId": "-Ky0CctiCtXXqcrDxJw9"
+    },
+    "-Ky0Ik33L4iyTllI2kFe": {
+      "bidCounter": 33,
+      "bidEndDate": 1511467200,
+      "bidStep": 2000,
+      "currentBid": 3000,
+      "details": "Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... ",
+      "eventId": "-Ky0Euc2W2JkH-N8qw5z",
+      "id": "-Ky0Ik33L4iyTllI2kFe",
+      "minimalBidPrice": 20000,
+      "numberOfTickets": 2,
+      "sellerUserId": "-Ky0CctiCtXXqcrDxJw9"
+    },
+    "-Ky0Iqc3wHhZjgnkC9n0": {
+      "bidCounter": 33,
+      "bidEndDate": 1511467200,
+      "bidStep": 1500,
+      "currentBid": 3000,
+      "details": "Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... ",
+      "eventId": "-Ky0FG-p593HsAFNPF_-",
+      "id": "-Ky0Iqc3wHhZjgnkC9n0",
+      "minimalBidPrice": 15000,
+      "numberOfTickets": 1,
+      "sellerUserId": "-Ky0D91XU3sLX9JHISVW"
+    },
+    "-KyD3zWEtC90890iewMj": {
+      "bidCounter": 33,
+      "bidEndDate": 1511467200,
+      "bidStep": "11",
+      "currentBid": 3000,
+      "details": "Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... ",
+      "eventId": "-Ky0EKWDcRlYVCoRxwUy",
+      "id": "-KyD3zWEtC90890iewMj",
+      "minimalBidPrice": 11,
+      "numberOfTickets": 11,
+      "sellerUserId": "mBUswvbahhRRDVfbfACIEgx3FKK2"
+    },
+    "-KyD7bJu42h0DVnPg06h": {
+      "bidCounter": 33,
+      "bidEndDate": 1511467200,
+      "bidStep": "12",
+      "currentBid": 3000,
+      "details": "Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... ",
+      "eventId": "-Ky0EgjgM-yrJfRAa3Dr",
+      "id": "-KyD7bJu42h0DVnPg06h",
+      "minimalBidPrice": 12,
+      "numberOfTickets": 12,
+      "sellerUserId": "mBUswvbahhRRDVfbfACIEgx3FKK2"
+    },
+    "-KyD7wfWH_YkhGdXMrT_": {
+      "bidCounter": 33,
+      "bidEndDate": 1518382800,
+      "bidStep": "11",
+      "currentBid": 3000,
+      "details": "Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... ",
+      "eventId": "-Ky0FG-p593HsAFNPF_-",
+      "id": "-KyD7wfWH_YkhGdXMrT_",
+      "minimalBidPrice": 11,
+      "numberOfTickets": 11,
+      "sellerUserId": "mBUswvbahhRRDVfbfACIEgx3FKK2"
+    },
+    "-KyDIKpiipsNbURqp7I1": {
+      "bidCounter": 33,
+      "bidEndDate": 1518382800,
+      "bidStep": "12",
+      "currentBid": 3000,
+      "details": "Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... ",
+      "eventId": "-Ky0FG-p593HsAFNPF_-",
+      "id": "-KyDIKpiipsNbURqp7I1",
+      "minimalBidPrice": 12,
+      "numberOfTickets": 1,
+      "sellerUserId": "mBUswvbahhRRDVfbfACIEgx3FKK2"
+    },
+    "-KyDIlIXLvabUclJ5UFe": {
+      "bidCounter": 33,
+      "bidEndDate": 1518382800,
+      "bidStep": "1",
+      "currentBid": 3000,
+      "details": "Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... ",
+      "eventId": "-Ky0EOBRvrSTeR2dw1zZ",
+      "id": "-KyDIlIXLvabUclJ5UFe",
+      "minimalBidPrice": 12,
+      "numberOfTickets": 12,
+      "sellerUserId": "mBUswvbahhRRDVfbfACIEgx3FKK2"
+    },
+    "-KyDKCS3MAEwOK3pLIkQ": {
+      "bidCounter": 33,
+      "bidEndDate": 1518382800,
+      "bidStep": "314",
+      "currentBid": 3000,
+      "details": "Lorem 1518382800 ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... Lorem ipsum ... ",
+      "eventId": "-Ky0E6CbE8qAxNntn8bj",
+      "id": "-KyDKCS3MAEwOK3pLIkQ",
+      "minimalBidPrice": 314,
+      "numberOfTickets": 314,
+      "sellerUserId": "mBUswvbahhRRDVfbfACIEgx3FKK2"
+    }
+  },
+  "users": {
+    "-Ky0CVPDvbJmmeyAggMr": {
+      "address": "Futrinka utca",
+      "dateOfBirth": "2001.01.01",
+      "email": "legyekrekamatilda@valami.com",
+      "gender": "female",
+      "id": "-Ky0CVPDvbJmmeyAggMr",
+      "name": "Legyek Réka Matlida",
+      "profilePictureUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4nBubms8tp5EDXG6LBhVyy4AES2WCqceh674hyF6rNwjYoJ4ddQ"
+    },
+    "-Ky0CctiCtXXqcrDxJw9": {
+      "address": "pistaba lak 12",
+      "dateOfBirth": "1900-01-01",
+      "email": "pistaba@pistaba.com",
+      "gender": "male",
+      "id": "-Ky0CctiCtXXqcrDxJw9",
+      "name": "Pista ba",
+      "profilePictureUrl": "http://3.bp.blogspot.com/-bUS0WbXC1YA/Uz0di05mS_I/AAAAAAAAQGg/u9o_g9VDTSg/s1600/pista_ba_animacio.jpg",
+      "tickets": {
+        "-KyD7wfWH_YkhGdXMrT_": true,
+        "-KyDIKpiipsNbURqp7I1": true,
+        "-KyDIlIXLvabUclJ5UFe": true,
+        "-KyDKCS3MAEwOK3pLIkQ": true
+      }
+    },
+    "-Ky0CqiDVsXAbshfMZ6H": {
+      "address": "marcsa var 42.",
+      "dateOfBirth": "2000-01-01",
+      "email": "marcsa@marcsa.hu",
+      "gender": "female",
+      "id": "-Ky0CqiDVsXAbshfMZ6H",
+      "name": "Marcsa",
+      "profilePictureUrl": "https://i.pinimg.com/236x/2c/80/53/2c80536d805ca08bd1f87d9db9fb9955--funny-wallpapers-wallpaper-iphone.jpg"
+    },
+    "-Ky0D91XU3sLX9JHISVW": {
+      "address": "namek",
+      "dateOfBirth": "2199-02-01",
+      "email": "mzx@mzx.hu",
+      "gender": "male",
+      "id": "-Ky0D91XU3sLX9JHISVW",
+      "name": "ifju satan",
+      "profilePictureUrl": "https://www.minihero.hu/wp-content/uploads/funko-pop-ifju-satan.jpg"
+    },
+    "BVMZSCDFy9QgR8LLyap7pSuVmVs1": {
+      "address": "sadfas",
+      "dateOfBirth": "2017-11-16",
+      "email": "sdfas@sadfasd.hu",
+      "id": "BVMZSCDFy9QgR8LLyap7pSuVmVs1",
+      "name": "sadfas",
+      "profilePictureUrl": "https://i.ytimg.com/vi/LRPFrqKJwQ4/maxresdefault.jpg"
+    },
+    "JiTAcanz6WZtTKIHUrgWgwOjiac2": {
+      "address": "test@test.com",
+      "dateOfBirth": "2222-02-22",
+      "email": "test@test.com",
+      "gender": "male",
+      "id": "JiTAcanz6WZtTKIHUrgWgwOjiac2",
+      "name": "eggp",
+      "profilePictureUrl": "https://ladysmithgazette.co.za/wp-content/uploads/sites/64/2014/08/baby-chick-and-an-egg.jpg"
+    },
+    "mBUswvbahhRRDVfbfACIEgx3FKK2": {
+      "address": "szeged",
+      "dateOfBirth": "2017-11-10",
+      "email": "nagy.gergo@3pixel.hu",
+      "gender": "male",
+      "id": "mBUswvbahhRRDVfbfACIEgx3FKK2",
+      "name": "Nagy Gergőa",
+      "profilePictureUrl": "https://cmeimg-a.akamaihd.net/640/clsd/getty/b96e82c973184dc8945a64a19e8e2e2e",
+      "tickets": {
+        "-Ky0HolLJBH3Q5uVHWZf": true,
+        "-Ky0Hz4uP2Es-j9q_Cmw": true,
+        "-Ky0I4C7RzhYJGKP_PAH": true,
+        "-Ky0IZDTNtGAjytLjtoM": true
+      }
+    },
+    "zPJyaboAnqaRH848qgCgUNKwwu43": {
+      "address": "futrinka utca",
+      "dateOfBirth": "2017-11-21",
+      "email": "test@elek.hu",
+      "gender": "male",
+      "id": "zPJyaboAnqaRH848qgCgUNKwwu43",
+      "name": "Aang The Last Air Bender",
+      "profilePictureUrl": "https://pbs.twimg.com/profile_images/831993825635745796/HnVmB0-k_400x400.jpg",
+      "tickets": {
+        "-Ky0Ik33L4iyTllI2kFe": true,
+        "-Ky0Iqc3wHhZjgnkC9n0": true,
+        "-KyD3zWEtC90890iewMj": true,
+        "-KyD7bJu42h0DVnPg06h": true
+      }
+    }
+  }
+}
