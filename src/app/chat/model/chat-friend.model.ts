@@ -2,6 +2,8 @@ export class ChatFriendModel {
   $id: string;
   name: string;
   profilePictureUrl: string;
+  online: boolean;
+  lastOnline: number;
 
   constructor(data?: ChatFriendModel) {
     if (data != null) {

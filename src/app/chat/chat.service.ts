@@ -8,7 +8,7 @@ import * as moment from 'moment';
 import 'rxjs/add/operator/map';
 import { ChatFriendModel } from './model/chat-friend.model';
 import 'rxjs/add/operator/first';
-import { ChatCallModel } from "./model/chat-call.model";
+import { ChatCallModel } from './model/chat-call.model';
 
 @Injectable()
 export class ChatService {
@@ -88,7 +88,9 @@ export class ChatService {
               'roomId': roomId,
               'friend': new ChatFriendModel({
                 $id: user.id,
-                name: user.name, profilePictureUrl: user.profilePictureUrl
+                name: user.name, profilePictureUrl: user.profilePictureUrl,
+                online: true,
+                lastOnline: null
               })
             });
         }

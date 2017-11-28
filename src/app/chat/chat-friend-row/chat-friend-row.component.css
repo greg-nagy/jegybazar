@@ -22,3 +22,36 @@ strong {
   margin-left: 60px;
   display: block;
 }
+
+:host(.is-online) > span:after {
+  display: block;
+  content: '';
+  width: 10px;
+  height: 10px;
+  background-color: green;
+  border-radius: 50%;
+  margin-top: -10px;
+  margin-left: -6px;
+}
+
+:host(.is-maybe-online) > span:after {
+  display: block;
+  content: '';
+  width: 10px;
+  height: 10px;
+  background-color: orange;
+  border-radius: 50%;
+  margin-top: -10px;
+  margin-left: -6px;
+}
+
+:host(.is-offline) > span:after {
+  display: block;
+  content: '';
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  border-radius: 50%;
+  margin-top: -10px;
+  margin-left: -6px;
+}
