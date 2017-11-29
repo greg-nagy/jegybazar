@@ -1,4 +1,9 @@
 {
   "SIMPLE": "Sima szoveg",
-  "WITHVARIABLE": "Szia {{variableValue}}"
+  "WITHVARIABLE": "Szia {{variableValue}}",
+  "APP": {
+    "TITLE": "Jegybazár"
+  },
+  "EVENTS": {},
+  "TICKETS": {}
 }

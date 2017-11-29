@@ -1,4 +1,9 @@
 {
   "SIMPLE": "Simple text",
-  "WITHVARIABLE": "Hello {{variableValue}}"
+  "WITHVARIABLE": "Hello {{variableValue}}",
+  "APP": {
+    "TITLE": "Events bid"
+  },
+  "EVENTS": {},
+  "TICKETS": {}
 }

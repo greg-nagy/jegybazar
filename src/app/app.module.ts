@@ -76,6 +76,6 @@ export class AppModule {
   constructor(translateService: TranslateService) {
     translateService.setDefaultLang('hu');
 
-    translateService.use('en');
+    translateService.use('hu');
   }
 }

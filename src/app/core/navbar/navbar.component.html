@@ -1,31 +1,57 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container">
-    <a class="navbar-brand" routerLink="/home">Jegybazár</a>
-    <button class="navbar-toggler" type="button" (click)="isCollapsed = !isCollapsed"
+    <a class="navbar-brand" routerLink="/home">{{"APP.TITLE"|translate}}</a>
+    <button class="navbar-toggler" type="button" (click)="toggleMenu()"
             aria-controls="navbarNavAltMarkup"
             aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" [collapse]="isCollapsed">
-      <div class="navbar-nav ml-auto">
-        <app-nav-bar-item url="home" name="Home"></app-nav-bar-item>
-        <app-nav-bar-item url="event" name="Események"></app-nav-bar-item>
-        <app-nav-bar-item url="ticket" name="Jegyek"></app-nav-bar-item>
-        <app-nav-bar-item url="about" name="Rólunk"></app-nav-bar-item>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <app-nav-bar-item url="home" name="Home"></app-nav-bar-item>
+        </li>
+        <li class="nav-item">
+          <app-nav-bar-item url="event" name="Események"></app-nav-bar-item>
+        </li>
+        <li class="nav-item">
+          <app-nav-bar-item url="ticket" name="Jegyek"></app-nav-bar-item>
+        </li>
+        <li class="nav-item">
+          <app-nav-bar-item url="about" name="Rólunk"></app-nav-bar-item>
+        </li>
         <ng-container *ngIf="!isLoggedIn; else loggedInBlock">
-          <app-nav-bar-item url="/user/login" name="Belépés"></app-nav-bar-item>
-          <a class="nav-item nav-link btn btn-primary text-light ml-lg-2 btn-sm"
-             routerLinkActive="active"
-             routerLink="/user/registration"
-          >Regisztráció</a>
+          <li class="nav-item">
+            <app-nav-bar-item url="/user/login" name="Belépés"></app-nav-bar-item>
+          </li>
+          <li class="nav-item"><a class="nav-item nav-link btn btn-primary text-light ml-lg-2 btn-sm"
+                                  routerLinkActive="active"
+                                  routerLink="/user/registration"
+          >Regisztráció</a></li>
         </ng-container>
         <ng-template #loggedInBlock>
-          <a class="nav-item nav-link tn btn-primary text-light ml-lg-2 btn-sm" routerLinkActive="active" routerLink="/user">Profile</a>
-          <a class="nav-item nav-link" routerLinkActive="active"
-             (click)="logout()">Logout
-          </a>
+          <li class="nav-item"><a class="nav-item nav-link tn btn-primary text-light ml-lg-2 btn-sm"
+                                  routerLinkActive="active" routerLink="/user">Profile</a></li>
+          <li class="nav-item"><a class="nav-item nav-link" routerLinkActive="active"
+                                  (click)="logout()">Logout
+          </a></li>
         </ng-template>
-      </div>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" aria-haspopup="true"
+             aria-expanded="false"
+             (click)="toggleLanguageSwitcher($event)">
+            Nyelv választás
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" [collapse]="isCollapsedLanguageSwitcher">
+            <button class="dropdown-item" href="#" [disabled]="currentLang == 'hu'" (click)="selectLang('hu',$event)">
+              Magyar
+            </button>
+            <button class="dropdown-item" href="#" [disabled]="currentLang == 'en'" (click)="selectLang('en',$event)">
+              Angol
+            </button>
+          </div>
+        </li>
+      </ul>
     </div>
   </div>
 </nav>
