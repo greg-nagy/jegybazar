@@ -30,7 +30,7 @@ export function ngswAppInitializer(
     // // Don't return the Promise, as that will block the application until the SW is registered, and
     // // cause a crash if the SW registration fails.
     // whenStable.then(() => navigator.serviceWorker.register(script, options));
-    navigator.serviceWorker.register(script, options)
+    navigator.serviceWorker.register(script, options);
   };
   return initializer;
 }
