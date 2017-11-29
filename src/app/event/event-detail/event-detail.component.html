@@ -5,7 +5,7 @@
 
     <div class="card-header">
       <div class="bg-light text-center">
-        <h3 *ngIf="!event.id$; else modify">Új esemény létrehozása</h3>
+        <h3 *ngIf="!event.$id; else modify">Új esemény létrehozása</h3>
         <ng-template #modify><h3>Esemeny szerkesztese</h3></ng-template>
       </div>
     </div>

@@ -13,7 +13,7 @@ import { UserModel } from './user-model';
 import { UserService } from './user.service';
 import 'rxjs/add/operator/mergeMap';
 import 'rxjs/add/operator/first';
-import { AngularFireDatabase } from 'angularfire2/database';
+import { AngularFireDatabase } from 'angularfire2/database-deprecated';
 import 'rxjs/add/operator/do';
 
 @Injectable()

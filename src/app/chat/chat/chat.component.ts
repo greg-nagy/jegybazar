@@ -5,7 +5,7 @@ import { ChatService } from '../chat.service';
 import { ChatFriendModel } from '../model/chat-friend.model';
 import { UserService } from '../../shared/user.service';
 import 'rxjs/add/operator/first';
-import { AngularFireDatabase } from 'angularfire2/database';
+import { AngularFireDatabase } from 'angularfire2/database-deprecated';
 
 @Component({
   selector: 'app-chat',
