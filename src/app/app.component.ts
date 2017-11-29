@@ -4,6 +4,7 @@ import { ReplaySubject } from 'rxjs/ReplaySubject';
 import { TimerObservable } from 'rxjs/observable/TimerObservable';
 import { SwUpdate } from './@angular/service-worker/src';
 import { environment } from '../environments/environment';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -17,10 +18,21 @@ export class AppComponent {
 
   constructor(
     userSerivce: UserService,
-    @Optional() private swUpdate: SwUpdate
+    @Optional() private swUpdate: SwUpdate,
+    translateService: TranslateService
   ) {
     this.isLoggedIn$ = userSerivce.isLoggedIn$;
     this.initPwaUpdateWatcher();
+
+    translateService.get('WITHVARIABLE', this.translateVariable)
+      .subscribe(
+        res => console.log('translate with variable: ', res)
+      );
+
+    translateService.get(['SIMPLE', 'WITHVARIABLE'], this.translateVariable)
+      .subscribe(
+        res => console.log('translate to many: ', res)
+      );
   }
 
   updatePwa($event: Event) {
