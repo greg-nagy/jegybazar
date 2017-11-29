@@ -8,7 +8,10 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "local": "lite-server --baseDir='dist'",
+    "local:prod": "ng build --prod && npm run local",
+    "local:dev": "ng build --dev && npm run local"
   },
   "private": true,
   "dependencies": {
@@ -48,6 +51,7 @@
     "karma-coverage-istanbul-reporter": "^1.2.1",
     "karma-jasmine": "~1.1.0",
     "karma-jasmine-html-reporter": "^0.2.2",
+    "lite-server": "^2.3.0",
     "protractor": "~5.1.2",
     "ts-node": "~3.2.0",
     "tslint": "~5.7.0",
