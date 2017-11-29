@@ -7,6 +7,7 @@ import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import 'rxjs/add/observable/of';
 import 'rxjs/add/operator/delay';
 import * as moment from 'moment';
+import { of } from 'rxjs/observable/of';
 
 export const MockedChatDatas = {
   mockedRoomId: '-Ky0HolLJBH3Q5uVHWZf',
@@ -59,7 +60,7 @@ export class MockedChatService extends ChatService {
           );
           rooms[roomId].next(roomMessages);
 
-          return Observable.of(true);
+          return of(true);
         }
       );
   }

@@ -4,6 +4,7 @@ import 'rxjs/add/operator/switchMap';
 import { Observable } from 'rxjs/Observable';
 import { EventModel } from '../shared/event-model';
 import { AngularFireDatabase } from 'angularfire2/database-deprecated';
+import { fromPromise } from 'rxjs/observable/fromPromise';
 
 @Injectable()
 export class EventService {
@@ -26,20 +27,20 @@ export class EventService {
   save(param: EventModel) {
     if (param.$id) {
       // update
-      return Observable.fromPromise(this.afDb.object(`events/${param.$id}`).update(param));
+      return fromPromise(this.afDb.object(`events/${param.$id}`).update(param));
     } else {
       // create
-      return Observable.fromPromise(this.afDb.object(`events/${param.$id}`).set(param));
+      return fromPromise(this.afDb.object(`events/${param.$id}`).set(param));
     }
   }
 
   // TODO: itt kitalalni, hogy hogyan akarjuk kezelni a fuggosegeket es aszerint implementalni
   delete(event: EventModel) {
-    return Observable.fromPromise(this.afDb.object(`events/${event.$id}`).remove());
+    return fromPromise(this.afDb.object(`events/${event.$id}`).remove());
   }
 
   addTicket(eventId: string, ticketId: string): Observable<string> {
-    return Observable.fromPromise(this.afDb.list(`events/${eventId}/tickets`).push(ticketId));
+    return fromPromise(this.afDb.list(`events/${eventId}/tickets`).push(ticketId));
   }
 }
 

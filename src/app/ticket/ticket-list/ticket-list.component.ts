@@ -1,5 +1,4 @@
 import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
 import { TicketModel } from '../../shared/ticket-model';
 import { TicketService } from '../../shared/ticket.service';
 import { UserService } from '../../shared/user.service';
@@ -8,6 +7,7 @@ import 'rxjs/add/operator/distinctUntilChanged';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/mergeMap';
 import { Subscription } from 'rxjs/Subscription';
+import { fromEvent } from 'rxjs/observable/fromEvent';
 
 @Component({
   selector: 'app-ticket-list',
@@ -38,7 +38,7 @@ export class TicketListComponent implements OnInit, OnDestroy, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    Observable.fromEvent(this.searchInput.nativeElement, 'keyup')
+    fromEvent(this.searchInput.nativeElement, 'keyup')
       .map(
         (event: Event) => (event.srcElement as HTMLInputElement).value
       )

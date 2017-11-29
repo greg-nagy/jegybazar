@@ -15,6 +15,8 @@ import { UserInfo } from 'firebase/app';
 import 'rxjs/add/operator/first';
 import 'rxjs/add/operator/catch';
 import * as moment from 'moment';
+import { fromPromise } from 'rxjs/observable/fromPromise';
+import { of } from 'rxjs/observable/of';
 
 @Injectable()
 export class UserService {
@@ -46,11 +48,11 @@ export class UserService {
   }
 
   login(email: string, password: string): Observable<UserModel | void> {
-    return Observable.fromPromise(this.afAuth.auth.signInWithEmailAndPassword(email, password));
+    return fromPromise(this.afAuth.auth.signInWithEmailAndPassword(email, password));
   }
 
   register(param: UserModel, password: string) {
-    return Observable.fromPromise(
+    return fromPromise(
       this.afAuth.auth.createUserWithEmailAndPassword(param.email, password)
     )
       .do(
@@ -103,7 +105,7 @@ export class UserService {
           // ha csatlakozva vagyok akkor vissza kerem a barataim listajat
           return this.afDb.list(`chat_friend_list/${user.uid}`, { preserveSnapshot: true });
         }
-        return Observable.of([]);
+        return of([]);
       }
     )
       .subscribe(

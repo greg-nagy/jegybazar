@@ -15,6 +15,12 @@ import 'rxjs/add/operator/mergeMap';
 import 'rxjs/add/operator/first';
 import { AngularFireDatabase } from 'angularfire2/database-deprecated';
 import 'rxjs/add/operator/do';
+import { zip } from 'rxjs/observable/zip';
+import { of } from 'rxjs/observable/of';
+import { forkJoin } from 'rxjs/observable/forkJoin';
+import { fromPromise } from 'rxjs/observable/fromPromise';
+import { combineLatest } from 'rxjs/observable/combineLatest';
+
 
 @Injectable()
 export class TicketService {
@@ -29,8 +35,8 @@ export class TicketService {
   getAllTickets(): Observable<TicketModel[]> {
     return this.afDb.list('tickets')
       .map(ticketsArray => ticketsArray.map(ticket =>
-        Observable.zip(
-          Observable.of(new TicketModel(ticket)),
+        zip(
+          of(new TicketModel(ticket)),
           this._eventService.getEventById(ticket.eventId),
           this._userService.getUserById(ticket.sellerUserId),
           (t: TicketModel, e: EventModel, u: UserModel) => {
@@ -41,16 +47,16 @@ export class TicketService {
             };
           })
       ))
-      .switchMap(zipStreamArray => Observable.forkJoin(zipStreamArray));
+      .switchMap(zipStreamArray => forkJoin(zipStreamArray));
   }
 
   create(ticket: TicketModel) {
-    return Observable.fromPromise(this.afDb.list('tickets').push(ticket))
+    return fromPromise(this.afDb.list('tickets').push(ticket))
       .map(
         resp => resp.key
       )
       .do(
-        ticketId => Observable.combineLatest(
+        ticketId => combineLatest(
           this._eventService.addTicket(ticket.eventId, ticketId),
           this._userService.addTicket(ticketId)
         )
@@ -65,8 +71,8 @@ export class TicketService {
     return this.afDb.object(`tickets/${id}`)
       .flatMap(
         ticketFirebaseRemoteModel => {
-          return Observable.combineLatest(
-            Observable.of(new TicketModel(ticketFirebaseRemoteModel)),
+          return combineLatest(
+            of(new TicketModel(ticketFirebaseRemoteModel)),
             this._eventService.getEventById(ticketFirebaseRemoteModel.eventId),
             this._userService.getUserById(ticketFirebaseRemoteModel.sellerUserId),
             (t: TicketModel, e: EventModel, u: UserModel) => {
@@ -77,6 +83,6 @@ export class TicketService {
   }
 
   modify(ticket: TicketModel) {
-    return Observable.fromPromise(this.afDb.object(`tickets/${ticket.id}`).update(ticket));
+    return fromPromise(this.afDb.object(`tickets/${ticket.id}`).update(ticket));
   }
 }

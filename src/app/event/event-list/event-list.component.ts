@@ -1,5 +1,4 @@
 import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
 import { EventModel } from '../../shared/event-model';
 import { EventService } from '../event.service';
 import { UserService } from '../../shared/user.service';
@@ -10,6 +9,7 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/mergeMap';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { Subscription } from 'rxjs/Subscription';
+import { fromEvent } from 'rxjs/observable/fromEvent';
 
 @Component({
   selector: 'app-event-list',
@@ -41,7 +41,7 @@ export class EventListComponent implements OnInit, OnDestroy, AfterViewInit {
 
   ngAfterViewInit(): void {
     console.log(this.searchInput);
-    Observable.fromEvent(this.searchInput.nativeElement, 'keyup')
+    fromEvent(this.searchInput.nativeElement, 'keyup')
       .delay(600)
       .map(
         (event: Event) => {
