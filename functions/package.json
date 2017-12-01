@@ -10,7 +10,13 @@
   },
   "dependencies": {
     "firebase-admin": "~5.4.2",
-    "firebase-functions": "^0.7.1"
+    "firebase-functions": "^0.7.1",
+    "moment": "^2.19.3"
   },
-  "private": true
+  "private": true,
+  "devDependencies": {
+    "ts-loader": "^3.2.0",
+    "webpack": "^3.9.1",
+    "webpack-node-externals": "^1.6.0"
+  }
 }

@@ -10,7 +10,12 @@
   <div class="clearfix chat-message">
     <div class="chat-message-header">
       <strong>{{msg.userName}}</strong>
-      <small class="float-right text-muted">{{msg.created | amFromUnix | amTimeAgo}}</small>
+      <small class="float-right text-muted" *ngIf="msg.created;else staticText">{{msg.created | amFromUnix |
+        amTimeAgo}}
+      </small>
+      <ng-template #staticText>
+        <small class="float-right text-muted">néhány másodperce</small>
+      </ng-template>
     </div>
     <p>{{msg.msg}}</p>
   </div>

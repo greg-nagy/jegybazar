@@ -4,7 +4,6 @@ import { Observable } from 'rxjs/Observable';
 import { ChatMessageModel } from './model/chat.model';
 import { AngularFireDatabase } from 'angularfire2/database-deprecated';
 import 'rxjs/add/operator/switchMap';
-import * as moment from 'moment';
 import 'rxjs/add/operator/map';
 import { ChatFriendModel } from './model/chat-friend.model';
 import 'rxjs/add/operator/first';
@@ -33,7 +32,7 @@ export class ChatService {
                   userId: user.id,
                   userName: user.name,
                   userPictureUrl: user.profilePictureUrl,
-                  created: moment().unix()
+                  created: null
                 })
               ).then(
                 () => {
