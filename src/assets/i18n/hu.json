@@ -5,5 +5,12 @@
     "TITLE": "Jegybazár"
   },
   "EVENTS": {},
-  "TICKETS": {}
+  "TICKETS": {},
+  "HOME": {
+    "LABELS": {
+      "EVENTS": "Események",
+      "TICKETS": "Jegyek",
+      "REGISTRATION": "Regisztráció"
+    }
+  }
 }

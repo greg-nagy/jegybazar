@@ -5,5 +5,12 @@
     "TITLE": "Events bid"
   },
   "EVENTS": {},
-  "TICKETS": {}
+  "TICKETS": {},
+  "HOME": {
+    "LABELS": {
+      "EVENTS": "Events",
+      "TICKETS": "Tickets",
+      "REGISTRATION": "Registration"
+    }
+  }
 }
