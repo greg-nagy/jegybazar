@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "jegybazar-27302"
+    "default": "jegybazar-27302",
+    "jegybazar": "jegybazar-27302"
   }
 }
