@@ -7,6 +7,7 @@
   "orientation": "portrait",
   "Scope": "/",
   "start_url": "/",
+  "lang": "hu-HU",
   "icons": [
     {
       "src": "images/icons/icon-72x72.png",
